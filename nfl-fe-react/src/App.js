@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Minor change to commit for development branch. Heroku 
+          Minor change to commit for development branch.
         </p>
         <a
           className="App-link"
