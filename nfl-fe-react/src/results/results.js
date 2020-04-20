@@ -14,16 +14,21 @@ function Results() {
             .catch(err => console.log(err))
   }
 
-  fetchAPI()
+  fetchAPI();
+
 
   })
 
    
   return (
-    <div className="App">
+    <div className="Results">
       <div>
-          {JSON.stringify(players[0])}
-          {JSON.stringify(players[1])}
+          <div className="player1">
+              {players.length > 1 ? players[0].first : ''}
+
+          </div>
+          {/* {JSON.stringify(players[0])}
+          {JSON.stringify(players[1])} */}
       </div>
     </div>
   );
