@@ -8,7 +8,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Minor change to commit for development branch.
+          Minor change to commit for development branch. This is going to get promote to production from development.
         </p>
         <a
           className="App-link"
