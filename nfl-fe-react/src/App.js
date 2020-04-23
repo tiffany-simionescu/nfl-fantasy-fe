@@ -12,7 +12,7 @@ const AutocompleteA = () => {
 
     useEffect(() => {
         const player = [];
-        const promises = new Array(600)   // this says how long the list is 
+        const promises = new Array(600)   // have 600 in the databases  
             .fill()  // need to study
             .map((value, index) => 
             fetch(`https://pokeapi.co/api/v2/pokemon-form/${index + 1}`));
@@ -66,14 +66,14 @@ const AutocompleteA = () => {
                     .filter(({ name }) => name.indexOf(`${search}`, "gi") > -1) //globaly ignore 
                     .map((value, index ) => {
                         return (
-                            <ResultsDiv
+                            <OptionsDiv
                                 onClick={() => updatePlayer(value.name)}
                                 className="options"
                                 key={index}
                                 tabIndex="0"
                             >
                                 <span> {value.name} </span>
-                                </ResultsDiv>
+                                </OptionsDiv>
                         );
                     })}
                     </AutoContainerDiv>
@@ -109,7 +109,7 @@ border: 2px solid green;
 width: 50%; 
 `
 /* options areas */ 
-const ResultsDiv = styled.div`
+const OptionsDiv = styled.div`
 border: 2px solid yellow;
 width: 50%; 
 &:hover {
