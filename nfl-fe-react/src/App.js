@@ -4,7 +4,7 @@ import './App.css';
 // import autocomplete from "./components/autocomplete.js"; 
 
 
-const Autocomplete = () => {
+const AutocompleteA = () => {
     const [display, setDisplay] = useState(false);
     const [options, setOptions] = useState([]);
     const [search, setSearch] = useState("");
@@ -12,7 +12,7 @@ const Autocomplete = () => {
 
     useEffect(() => {
         const player = [];
-        const promises = new Array(22)   // this says how long the list is 
+        const promises = new Array(600)   // this says how long the list is 
             .fill()  // need to study
             .map((value, index) => 
             fetch(`https://pokeapi.co/api/v2/pokemon-form/${index + 1}`));
@@ -29,7 +29,7 @@ const Autocomplete = () => {
 }, []);
 
     useEffect(() => {
-        window.addEventListener("mousedown", handleClickOutside);
+        window.addEventListener("mousedown", handleClickOutside, true);
         return () => {
             window.removeEventListener("mousedown", handleClickOutside);
         };
@@ -47,9 +47,11 @@ const Autocomplete = () => {
         setDisplay(false); 
     };
 
+
+
     return (
-        <div ref={wrapperRef} className="PlayerAutoSearch">
-            <h1> Player A Search Box </h1>
+        <MainDiv ref={wrapperRef} className="PlayerAutoSearch">
+            <TypeDiv className="PlayerA-Area">
             <Input 
                 id="autocomplete" 
                 onClick={() => setDisplay(!display)}
@@ -58,24 +60,27 @@ const Autocomplete = () => {
                 placeholder="Player A"
             />
             {display && ( 
-                <div className="autoContainer">
+                <AutoContainerDiv
+                className="List-Area"> 
                     {options
                     .filter(({ name }) => name.indexOf(`${search}`, "gi") > -1) //globaly ignore 
                     .map((value, index ) => {
                         return (
-                            <div 
+                            <ResultsDiv
                                 onClick={() => updatePlayer(value.name)}
-                                className="option"
+                                className="options"
                                 key={index}
                                 tabIndex="0"
                             >
                                 <span> {value.name} </span>
-                                </div>
+                                </ResultsDiv>
                         );
                     })}
-                    </div>
+                    </AutoContainerDiv>
             )}
-        </div>
+            <button> Pick Player A</button>
+            </TypeDiv>
+        </MainDiv>
     );
 
 };
@@ -85,10 +90,39 @@ const Autocomplete = () => {
 
 /* styling */ 
 const Input = styled.input`
-border: 2px solid black; 
+border: 2px solid red; 
 color:  palevioletred;
 background:papayawhip;
 `
+/* always shows */ 
+const MainDiv = styled.div` \
+border: 2px solid black; 
+width: 80%; 
+`
+const TypeDiv = styled.div`
+border: 2px solid purple;
+width: 60%;
+`
+/* Shows when selecting player */
+const AutoContainerDiv = styled.div`
+border: 2px solid green;  
+width: 50%; 
+`
+/* options areas */ 
+const ResultsDiv = styled.div`
+border: 2px solid yellow;
+width: 50%; 
+&:hover {
+    background: black;
+    color: white; 
+}
+`
+/* didn't work */ 
+// const HoverDiv = styled.div`
+// background: black;
+// color: white; 
+// width: 80%;
+// `
 
 function App() {
     return (
@@ -98,7 +132,7 @@ function App() {
             </div>
 
             <div className="Main-Area">
-            <Autocomplete/> 
+            <AutocompleteA/> 
             </div>
 
             <div className="Foot-Area">

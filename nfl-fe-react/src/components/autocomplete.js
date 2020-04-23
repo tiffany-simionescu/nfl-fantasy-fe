@@ -28,7 +28,7 @@ const autocomplete = () => {
     useEffect(() => {
         window.addEventListener("mousedown", handleClickOutside);
         return () => {
-            window.removeEventListener("mpousedown", handleClickOutside);
+            window.removeEventListener("mousedown", handleClickOutside);
         };
     });
 
