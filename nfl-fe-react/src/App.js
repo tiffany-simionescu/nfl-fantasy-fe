@@ -15,13 +15,13 @@ const Autocomplete = () => {
         const promises = new Array(22)   // this says how long the list is 
             .fill()  // need to study
             .map((value, index) => 
-            fetch(`https://api.github.com/users/lauralyeinc/followers`));
+            fetch(`https://pokeapi.co/api/v2/pokemon-form/${index + 1}`));
         Promise.all(promises).then(playersArray => {
             return playersArray.map(value => 
                 value
                 .json()
-                .then(({ name }) => 
-                player.push({name})
+                .then(({ name, sprites : {front_default: sprite } }) => 
+                player.push({name, sprite})
             )
         );
     });
