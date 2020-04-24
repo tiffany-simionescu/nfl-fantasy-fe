@@ -1,5 +1,6 @@
 import React, {useEffect, useState, useRef } from "react";
 import styled from "styled-components";
+import axios from "axios"; 
 import './App.css';
 // import autocomplete from "./components/autocomplete.js"; 
 
@@ -11,22 +12,46 @@ const AutocompleteA = () => {
     const wrapperRef = useRef(null); 
 
     useEffect(() => {
+        const proxyurl = 'http://cors-anywhere.herokuapp.com/'; // this cor's link is causing problems, 429 TOO MANY REQUESTS. BUT getting a "response" 10 times. 
+
         const player = [];
-        const promises = new Array(600)   // have 600 in the databases  
+        const promises = new Array(10)   // have 600 in the databases  
             .fill()  // need to study
             .map((value, index) => 
-            fetch(`https://pokeapi.co/api/v2/pokemon-form/${index + 1}`));
-        Promise.all(promises).then(playersArray => {
-            return playersArray.map(value => 
+            fetch(proxyurl + `https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players/`));
+        Promise.all(promises)
+        .then(playerArray => {
+            console.log(playerArray); // response 10 times, getting closer. 
+            return playerArray.map(value =>    // this is a problem area, it can't map over something that isn't showing correctly. "response"...
                 value
                 .json()
-                .then(({ name, sprites : {front_default: sprite } }) => 
-                player.push({name, sprite})
+                .then(({ name }) => 
+                player.push({name})
             )
         );
     });
     setOptions(player);
-}, []);
+    }, []);  
+    
+    // useEffect(() => {
+    //     const player = [];
+    //     const promises = new Array(20)   // have 600 in the databases  
+    //         .fill()  // need to study
+    //         .map((value, index) => 
+    //         fetch(`https://pokeapi.co/api/v2/pokemon-form/${index + 1}`));
+    //     Promise.all(promises)
+    //     .then(res => {
+    //         console.log(res); 
+    //         return res.map(value => 
+    //             value
+    //                 .json()
+    //                 .then(({ name }) => 
+    //                 player.push({name})
+    //         )
+    //     );
+    // });
+    // setOptions(player);
+    // }, []);
 
     useEffect(() => {
         window.addEventListener("mousedown", handleClickOutside, true);
@@ -117,12 +142,6 @@ width: 50%;
     color: white; 
 }
 `
-/* didn't work */ 
-// const HoverDiv = styled.div`
-// background: black;
-// color: white; 
-// width: 80%;
-// `
 
 function App() {
     return (
