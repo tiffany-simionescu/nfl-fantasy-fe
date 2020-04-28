@@ -1,36 +1,7 @@
-import React, {useEffect, useState, useRef } from "react";
-import styled from "styled-components";
-import express from "express"; 
-import axios from "axios"; 
+import React, { useState, useRef, useEffect } from "react";
+import axios from "axios";
+import styled from "styled-components"; 
 import './App.css';
-import autocomplete from "./components/autocomplete.js"; 
-
-dependencies 
-const { createProxyMiddle } = require('http-proxy-middleware'); 
-
-
-// proxy middleware options
-const apioptions = {
-    target: `https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json`,
-    changeOrigin: true,
-    ws: true, //proxy websockets
-    pathRewrite: {
-        '^/api/old-path' : '/pai/new-path',  //rewrite path
-        '^/api/remove/path' : '/path'  // remove base path
-    },
-    router: {
-        // when request.headers.host == 'dev.localhost:3000',
-        // overide target to localhost:8080
-        'dev.localhost:3000' : 'http://localhost:8080'
-    }
-}
-//create proxy (without context)
-const Proxy = createProxyMiddle(apioptions);
-//mount Proxy in web server
-const app = express();
-app.use('/api', Proxy);
-app.listen(3000); 
-
 
 const AutocompleteA = () => {
     const [display, setDisplay] = useState(false);
@@ -39,13 +10,14 @@ const AutocompleteA = () => {
     const wrapperRef = useRef(null); 
 
     useEffect(() => {
-        const proxyurl = 'http://cors-anywhere.herokuapp.com/'; // this cor's link is causing problems, 429 TOO MANY REQUESTS. BUT getting a "response" 600 times in console.log ine 24. 
+        // const proxyurl = 'http://cors-anywhere.herokuapp.com/'; // this cor's link is causing problems, 429 TOO MANY REQUESTS. BUT getting a "response" 600 times in console.log ine 24. 
         const url = `https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json`; 
+        const testurl = `https://pokeapi.co/api/v2/pokemon-form/`
         const player = [];
-        const promises = new Array(600)   // have 600 in the databases  
+        const promises = new Array(10)   // have 600 in the databases  
             .fill()  // need to study
             .map((value, index) => 
-            axios.fetch(proxyurl + url));       // need to see and find the res.data and the name it's call in the API.   
+            fetch(testurl));       // need to see and find the res.data and the name it's call in the API.   
         Promise.all(promises)
         .then(playerArray => {
             console.log(playerArray); 
@@ -80,8 +52,6 @@ const AutocompleteA = () => {
         setSearch(player);
         setDisplay(false); 
     };
-
-
 
     return (
         <MainDiv ref={wrapperRef} className="PlayerAutoSearch">
@@ -119,96 +89,25 @@ const AutocompleteA = () => {
 
 };
 
-const AutocompleteB = () => {
-    const [display, setDisplay] = useState(false);
-    const [options, setOptions] = useState([]);
-    const [search, setSearch] = useState("");
-    const wrapperRef = useRef(null); 
 
-    useEffect(() => {
-        const proxyurl = 'http://cors-anywhere.herokuapp.com/'; // this cor's link is causing problems, 429 TOO MANY REQUESTS. BUT getting a "response" 600 times in console.log ine 24. 
-        const url = `https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json`; 
-        const player = [];
-        const promises = new Array(600)   // have 600 in the databases  
-            .fill()  // need to study
-            .map((value, index) => 
-            fetch(proxyurl + url));
-        Promise.all(promises)
-        .then(playerArray => {
-            console.log(playerArray);   
-            // return playerArray.map(value =>   
-            //     value
-            //     .json()
-            //     .then(({ name }) => 
-            //     player.push({name})
-            // )
-        // );
-    });
-    setOptions(player);
-    }, []);  
-
-
-    useEffect(() => {
-        window.addEventListener("mousedown", handleClickOutside, true);
-        return () => {
-            window.removeEventListener("mousedown", handleClickOutside);
-        };
-    });
-
-    const handleClickOutside = event => {
-        const { current: wrap } = wrapperRef;
-        if (wrap && !wrap.contains(event.target)) {
-            setDisplay(false);
-        }
-    };
-
-    const updatePlayer = player => {
-        setSearch(player);
-        setDisplay(false); 
-    };
-
-
-
+function App() {
     return (
-        <MainDiv ref={wrapperRef} className="PlayerAutoSearch">
-            <TypeDiv className="PlayerB-Area">
-            <Input 
-                id="autocompleteB" 
-                onClick={() => setDisplay(!display)}
-                value={search}
-                onChange={event => setSearch(event.target.value)}
-                placeholder="Player B"
-            />
-            {display && ( 
-                <AutoContainerDiv
-                className="List-Area"> 
-                    {options
-                    .filter(({ name }) => name.indexOf(`${search}`, "gi") > -1) //globaly ignore 
-                    .map((value, index ) => {
-                        return (
-                            <OptionsDiv
-                                onClick={() => updatePlayer(value.name)}
-                                className="options"
-                                key={index}
-                                tabIndex="0"
-                            >
-                                <span> {value.name} </span>
-                                </OptionsDiv>
-                        );
-                    })}
-                    </AutoContainerDiv>
-            )}
-            <button> Pick Player B</button>
-            </TypeDiv>
-        </MainDiv>
+        <div className="App">
+            <h1> The Perfect Trade: Football Fantasy Trade Anaylzer</h1>
+            <div className="Nav-Area">
+            </div>
+
+            <div className="Main-Area">
+            <AutocompleteA/>  
+            </div>
+
+            <div className="Foot-Area">
+            </div>
+        </div>
     );
+}
 
-};
-
-
-
-
-/* styling */ 
+// /* styling */ 
 const Input = styled.input`
 border: 2px solid red; 
 color:  palevioletred;
@@ -238,22 +137,5 @@ width: 50%;
 }
 `
 
-function App() {
-    return (
-        <div className="App">
-            <h1> The Perfect Trade: Football Fantasy Trade Anaylzer</h1>
-            <div className="Nav-Area">
-            </div>
-
-            <div className="Main-Area">
-            <AutocompleteA/>  
-            <AutocompleteB/>  
-            </div>
-
-            <div className="Foot-Area">
-            </div>
-        </div>
-    );
-}
 
 export default App;
