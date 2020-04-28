@@ -6,30 +6,30 @@ import './App.css';
 // import autocomplete from "./components/autocomplete.js"; 
 
 //dependencies 
-const { createProxyMiddle } = require('http-proxy-middleware'); 
+// const { createProxyMiddle } = require('http-proxy-middleware'); 
 
 
-// proxy middleware options
-const apioptions = {
-    target: `https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players/`,
-    changeOrigin: true,
-    ws: true, //proxy websockets
-    pathRewrite: {
-        '^/api/old-path' : '/pai/new-path',  //rewrite path
-        '^/api/remove/path' : '/path'  // remove base path
-    },
-    router: {
-        // when request.headers.host == 'dev.localhost:3000',
-        // overide target to localhost:8080
-        'dev.localhost:3000' : 'http://localhost:8080'
-    }
-}
-//create proxy (without context)
-const Proxy = createProxyMiddle(apioptions);
-//mount Proxy in web server
-const app = express();
-app.use('/api', Proxy);
-app.listen(3000); 
+// // proxy middleware options
+// const apioptions = {
+//     target: `https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players/`,
+//     changeOrigin: true,
+//     ws: true, //proxy websockets
+//     pathRewrite: {
+//         '^/api/old-path' : '/pai/new-path',  //rewrite path
+//         '^/api/remove/path' : '/path'  // remove base path
+//     },
+//     router: {
+//         // when request.headers.host == 'dev.localhost:3000',
+//         // overide target to localhost:8080
+//         'dev.localhost:3000' : 'http://localhost:8080'
+//     }
+// }
+// //create proxy (without context)
+// const Proxy = createProxyMiddle(apioptions);
+// //mount Proxy in web server
+// const app = express();
+// app.use('/api', Proxy);
+// app.listen(3000); 
 
 
 const AutocompleteA = () => {
