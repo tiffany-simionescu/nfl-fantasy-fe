@@ -10,14 +10,13 @@ const AutocompleteA = () => {
     const wrapperRef = useRef(null); 
 
     useEffect(() => {
-        // const proxyurl = 'http://cors-anywhere.herokuapp.com/'; // this cor's link is causing problems, 429 TOO MANY REQUESTS. BUT getting a "response" 600 times in console.log ine 24. 
         const url = `https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json`; 
-        const testurl = `https://pokeapi.co/api/v2/pokemon-form/`
+        // const testurl = `https://pokeapi.co/api/v2/pokemon-form/`
         const player = [];
         const promises = new Array(10)   // have 600 in the databases  
             .fill()  // need to study
             .map((value, index) => 
-            fetch(testurl));       // need to see and find the res.data and the name it's call in the API.   
+            fetch(url));       // need to see and find the res.data and the name it's call in the API.   
         Promise.all(promises)
         .then(playerArray => {
             console.log(playerArray); 
@@ -55,7 +54,7 @@ const AutocompleteA = () => {
 
     return (
         <MainDiv ref={wrapperRef} className="PlayerAutoSearch">
-            <TypeDiv className="PlayerA-Area">
+            <TypeDiv className="PlayerA-Textbox">
             <Input 
                 id="autocompleteA" 
                 onClick={() => setDisplay(!display)}
@@ -86,7 +85,6 @@ const AutocompleteA = () => {
             </TypeDiv>
         </MainDiv>
     );
-
 };
 
 
@@ -105,7 +103,7 @@ function App() {
             </div>
         </div>
     );
-}
+};
 
 // /* styling */ 
 const Input = styled.input`
