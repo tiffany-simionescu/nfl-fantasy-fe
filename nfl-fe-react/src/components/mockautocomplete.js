@@ -5,6 +5,17 @@ import styled from "styled-components";
 // mockdata for now 
 // const promises = ['Tom Brady', 'Aaron Donald', 'Drew Brees', 'Khalil Mack', 'Pat Mahomes' ];
 
+// for app.js 
+//  {/* <Mockautocomplete
+//                 options={[
+//                     'Tom Brady',
+//                     'Aaron Donald',
+//                     'Drew Brees',
+//                     'Khalil Mack',
+//                     'Pat Mahomes'
+//                 ]}
+//                 />  */}
+
 export class Mockautocomplete extends Component {
     static propTypes = {
         options: PropTypes.instanceOf(Array).isRequired }; 

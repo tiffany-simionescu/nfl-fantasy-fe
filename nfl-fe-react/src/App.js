@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components"; 
 import './App.css';
-import Mockautocomplete from "./components/Mockautocomplete.js"; 
+import Dropdown from "react-bootstrap/Dropdown"; 
 
 
 // const AutocompleteA = () => {
@@ -99,16 +99,33 @@ function App() {
             </div>
 
             <div className="Main-Area">
-            {/* <AutocompleteA/>   */}
-            <Mockautocomplete
-                options={[
-                    'Tom Brady',
-                    'Aaron Donald',
-                    'Drew Brees',
-                    'Khalil Mack',
-                    'Pat Mahomes'
-                ]}
-                /> 
+                <div className="PlayA-Area">
+                <Dropdown>
+                    <Dropdown.Toggle variant="success" id="player-A">
+                        Pick Player A 
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu className="playerA-dropdown">
+                        <Dropdown.Item href="#"> Tom Brady </Dropdown.Item>
+                        <Dropdown.Item href="#"> Aaron Donald </Dropdown.Item>
+                        <Dropdown.Item href="#"> Drew Brees </Dropdown.Item>
+                        <Dropdown.Item href="#"> Khalil Mack </Dropdown.Item>
+                    </Dropdown.Menu>          
+                </Dropdown>
+                </div> 
+
+                <div className = "PlayerB-Area">
+                <Dropdown>
+                    <Dropdown.Toggle variant="success" id="player-B">
+                        Pick Player B 
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu className="playerB-dropdown">
+                        <Dropdown.Item href="#"> Tom Brady </Dropdown.Item>
+                        <Dropdown.Item href="#"> Aaron Donald </Dropdown.Item>
+                        <Dropdown.Item href="#"> Drew Brees </Dropdown.Item>
+                        <Dropdown.Item href="#"> Khalil Mack </Dropdown.Item>
+                    </Dropdown.Menu>          
+                </Dropdown>
+                </div>
             </div>
 
             <div className="Foot-Area">
@@ -146,6 +163,8 @@ function App() {
 //     color: white; 
 // }
 // `
+
+
 
 
 export default App;
