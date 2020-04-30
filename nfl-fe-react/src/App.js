@@ -1,9 +1,9 @@
+
 import React, { useState, useRef, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components"; 
 import './App.css';
 import Dropdown from "react-bootstrap/Dropdown"; 
-
 
 // const AutocompleteA = () => {
 //     const [display, setDisplay] = useState(false);
@@ -91,6 +91,8 @@ import Dropdown from "react-bootstrap/Dropdown";
 // };
 
 
+import AppRouter from './components/AppRouter.js';
+
 function App() {
     return (
         <div className="App">
@@ -99,6 +101,7 @@ function App() {
             </div>
 
             <div className="Main-Area">
+            <AppRouter/>
                 <PlayeraArea className="PlayA-Area">
                 <Dropdown>
                     <Dropdown.Toggle variant="success" id="player-A">
@@ -174,5 +177,5 @@ padding: 5rem;
 
 
 
-
 export default App;
+
