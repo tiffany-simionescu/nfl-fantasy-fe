@@ -11,12 +11,14 @@
     "apollo-client": "^2.6.8",
     "apollo-link-http": "^1.5.17",
     "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
     "formik": "^2.1.4",
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
     "heroku": "^7.39.5",
     "moment": "^2.24.0",
     "react": "^16.13.1",
+    "react-bootstrap": "^1.0.1",
     "react-apollo": "^3.1.5",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
@@ -49,5 +51,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "http-proxy-middleware": "^1.0.3"
   }
 }
