@@ -11,10 +11,10 @@ function DropDownA() {
                 Pick Player A 
             </Dropdown.Toggle>
         <Dropdown.Menu className="playerA-dropdown">
-            <Dropdown.Item href="#"> Tom Brady </Dropdown.Item> 
-            <Dropdown.Item href="#"> Aaron Donald </Dropdown.Item>
-            <Dropdown.Item href="#"> Drew Brees </Dropdown.Item>
-            <Dropdown.Item href="#"> Khalil Mack </Dropdown.Item>
+            <Dropdown.Item eventkey="1"> Tom Brady </Dropdown.Item>  
+            <Dropdown.Item eventkey="2" disabled> Aaron Donald </Dropdown.Item>
+            <Dropdown.Item eventkey="3" diabled> Drew Brees </Dropdown.Item>
+            <Dropdown.Item eventkey="4" diabled> Khalil Mack </Dropdown.Item>
         </Dropdown.Menu>          
         </Dropdown>
     </PlayeraArea> 
