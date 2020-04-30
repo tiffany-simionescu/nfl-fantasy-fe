@@ -99,7 +99,7 @@ function App() {
             </div>
 
             <div className="Main-Area">
-                <div className="PlayA-Area">
+                <PlayeraArea className="PlayA-Area">
                 <Dropdown>
                     <Dropdown.Toggle variant="success" id="player-A">
                         Pick Player A 
@@ -111,9 +111,9 @@ function App() {
                         <Dropdown.Item href="#"> Khalil Mack </Dropdown.Item>
                     </Dropdown.Menu>          
                 </Dropdown>
-                </div> 
+                </PlayeraArea> 
 
-                <div className = "PlayerB-Area">
+                <PlayerbArea className = "PlayerB-Area">
                 <Dropdown>
                     <Dropdown.Toggle variant="success" id="player-B">
                         Pick Player B 
@@ -125,7 +125,7 @@ function App() {
                         <Dropdown.Item href="#"> Khalil Mack </Dropdown.Item>
                     </Dropdown.Menu>          
                 </Dropdown>
-                </div>
+                </PlayerbArea>
             </div>
 
             <div className="Foot-Area">
@@ -163,6 +163,14 @@ function App() {
 //     color: white; 
 // }
 // `
+
+const PlayeraArea = styled.div`
+padding: 5rem; 
+`
+
+const PlayerbArea = styled.div`
+padding: 5rem; 
+`
 
 
 
