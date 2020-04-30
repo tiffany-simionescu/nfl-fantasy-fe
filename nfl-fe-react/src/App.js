@@ -101,6 +101,7 @@ function App() {
 
             <div className="Main-Area">
             <AppRouter/>
+            <AutocompleteA />
             </div>
 
             <div className="Foot-Area">
