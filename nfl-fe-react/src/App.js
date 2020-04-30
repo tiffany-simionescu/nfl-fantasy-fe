@@ -102,33 +102,6 @@ function App() {
 
             <div className="Main-Area">
             <AppRouter/>
-                <PlayeraArea className="PlayA-Area">
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="player-A">
-                        Pick Player A 
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu className="playerA-dropdown">
-                        <Dropdown.Item href="#"> Tom Brady </Dropdown.Item>
-                        <Dropdown.Item href="#"> Aaron Donald </Dropdown.Item>
-                        <Dropdown.Item href="#"> Drew Brees </Dropdown.Item>
-                        <Dropdown.Item href="#"> Khalil Mack </Dropdown.Item>
-                    </Dropdown.Menu>          
-                </Dropdown>
-                </PlayeraArea> 
-
-                <PlayerbArea className = "PlayerB-Area">
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="player-B">
-                        Pick Player B 
-                    </Dropdown.Toggle>
-                    <Dropdown.Menu className="playerB-dropdown">
-                        <Dropdown.Item href="#"> Tom Brady </Dropdown.Item>
-                        <Dropdown.Item href="#"> Aaron Donald </Dropdown.Item>
-                        <Dropdown.Item href="#"> Drew Brees </Dropdown.Item>
-                        <Dropdown.Item href="#"> Khalil Mack </Dropdown.Item>
-                    </Dropdown.Menu>          
-                </Dropdown>
-                </PlayerbArea>
             </div>
 
             <div className="Foot-Area">
@@ -167,13 +140,6 @@ function App() {
 // }
 // `
 
-const PlayeraArea = styled.div`
-padding: 5rem; 
-`
-
-const PlayerbArea = styled.div`
-padding: 5rem; 
-`
 
 
 
