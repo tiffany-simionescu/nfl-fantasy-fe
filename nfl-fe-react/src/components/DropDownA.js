@@ -6,6 +6,7 @@ function DropDownA() {
 
     return(
     <PlayeraArea className="PlayA-Area">
+
         <Dropdown>
             <Dropdown.Toggle variant="success" id="player-A">
                 Pick Player A 
@@ -25,6 +26,7 @@ function DropDownA() {
 const PlayeraArea = styled.div`
 padding: 5rem; 
 `
+
 
 export default DropDownA; 
 

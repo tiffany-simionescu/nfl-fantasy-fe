@@ -1,4 +1,5 @@
 
+
 import React, { useState, useRef, useEffect } from "react";
 import AppRouter from './components/AppRouter.js';
 import axios from "axios";
@@ -156,16 +157,4 @@ width: 50%;
 }
 `
 
-
-
-// const PlayeraArea = styled.div`
-// padding: 5rem; 
-// `
-// const PlayerbArea = styled.div`
-// padding: 5rem; 
-// `
-
-
-
 export default App;
-
