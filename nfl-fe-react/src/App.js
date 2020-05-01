@@ -106,7 +106,7 @@ function App() {
 
             <div className="Foot-Area">
             </div>
-        </div>
+            </div>
     );
 };
 
