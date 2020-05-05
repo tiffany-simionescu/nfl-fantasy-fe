@@ -6,17 +6,18 @@ function DropDownA() {
 
     return(
     <PlayeraArea className="PlayA-Area">
-    <Dropdown>
-        <Dropdown.Toggle variant="success" id="player-A">
-            Pick Player A 
-    </Dropdown.Toggle>
-    <Dropdown.Menu className="playerA-dropdown">
-    <Dropdown.Item href="#"> Tom Brady </Dropdown.Item>
-    <Dropdown.Item href="#"> Aaron Donald </Dropdown.Item>
-    <Dropdown.Item href="#"> Drew Brees </Dropdown.Item>
-    <Dropdown.Item href="#"> Khalil Mack </Dropdown.Item>
-    </Dropdown.Menu>          
-    </Dropdown>
+
+        <Dropdown>
+            <Dropdown.Toggle variant="success" id="player-A">
+                Pick Player A 
+            </Dropdown.Toggle>
+        <Dropdown.Menu className="playerA-dropdown">
+            <Dropdown.Item eventkey="1"> Tom Brady </Dropdown.Item>  
+            <Dropdown.Item eventkey="2" disabled> Aaron Donald </Dropdown.Item>
+            <Dropdown.Item eventkey="3" diabled> Drew Brees </Dropdown.Item>
+            <Dropdown.Item eventkey="4" diabled> Khalil Mack </Dropdown.Item>
+        </Dropdown.Menu>          
+        </Dropdown>
     </PlayeraArea> 
     ); 
 }
@@ -26,9 +27,6 @@ const PlayeraArea = styled.div`
 padding: 5rem; 
 `
 
-const PlayerbArea = styled.div`
-padding: 5rem; 
-`
 
 export default DropDownA; 
 

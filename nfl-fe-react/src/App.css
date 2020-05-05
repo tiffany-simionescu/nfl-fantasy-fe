@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.playerB-dropdown {
+  display: flex;
+  flex-direction: column;
+}
+
+.playerA-dropdown {
+  display: flex;
+  flex-direction: column;
+}

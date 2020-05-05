@@ -57,12 +57,12 @@ function DropDown() {
             </Dropdown.Toggle>
 
             <Dropdown.Menu as={CustomMenu}>
-                <Dropdown.Item eventKey="1">Red</Dropdown.Item>
+                <Dropdown.Item eventKey="1">Tom Brady</Dropdown.Item>
                 <Dropdown.Item eventKey="2">Blue</Dropdown.Item>
-                <Dropdown.Item eventKey="3" > Orange </Dropdown.Item>
+                <Dropdown.Item eventKey="3" > Drew Brees </Dropdown.Item>
                 <Dropdown.Item eventKey="1">Red-Orange</Dropdown.Item>
             </Dropdown.Menu>
-            </Dropdown>,
+            </Dropdown>
     );
 }; 
 
