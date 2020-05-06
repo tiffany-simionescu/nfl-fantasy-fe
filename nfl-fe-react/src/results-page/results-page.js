@@ -47,15 +47,17 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
   const { player0_id, player1_id, week } = state;
 
   const PlayersStat = state.searchResults.map(result => {
-    return <ResultsCard
-      playersname={result.name}
-      position={result.position}
-      rankPrediction={result.rankPred}
-      week_1={result.week1Pred}
-
-      
-      // player1name={result.first}
-    />
+    return (
+    <div>
+      <ResultsCard
+        playersname={result.name}
+        position={result.position}
+        rankPrediction={result.rankPred}
+        week_1={result.week1Pred}
+        isWinner={result.winner}
+      />
+    </div>
+    )
   });
   
   return(
