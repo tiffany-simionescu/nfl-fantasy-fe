@@ -3,7 +3,8 @@ import AppRouter from './components/AppRouter.js';
 import './App.css';
 import ReactGA from 'react-ga';
 import { createBrowserHistory } from 'history';
-import ApiBE from "./actions/ApiBE.js"; 
+import Footer from "./components/Footer.js";
+import Nav from "./components/Nav.js";
 
 // Google Analytics for the whole app
     ReactGA.initialize('UA-145773395-3');
@@ -20,8 +21,8 @@ import ApiBE from "./actions/ApiBE.js";
 function App() {
     return (
         <div className="App">
-            <h1> The Perfect Trade: Football Fantasy Trade Anaylzer</h1>
             <div className="Nav-Area">
+                <Nav />
             </div>
 
             <div className="Main-Area">
@@ -30,6 +31,7 @@ function App() {
 
             <div className="Foot-Area">
             </div>
+                <Footer />
             </div>
     );
 };

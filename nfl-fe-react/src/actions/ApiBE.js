@@ -35,7 +35,7 @@ function ApiBE() {
     }, [playerList] );  // should be empty so it doesn't repeat, but won't work otherwise added , 1 to make it only loop once, but failed also with url. 
 
     return [ isLoading, playerList ], 
-    <div> <h1> hi </h1></div>; 
+    <div> <h3> hi, coming from ApiBe.js </h3></div>; 
 
 };
 
