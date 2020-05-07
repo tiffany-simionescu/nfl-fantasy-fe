@@ -17,7 +17,6 @@ import Nav from "./components/Nav.js";
     history.listen(location => ReactGA.pageview(location.pathname));
 
 
-
 function App() {
     return (
         <div className="App">
