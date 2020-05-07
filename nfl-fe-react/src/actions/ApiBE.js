@@ -4,7 +4,7 @@ import React, {useState, useEffect} from "react";
 function ApiBE() {
     const [playerList, setplayerList] = useState();  
     // no[] <- runs on unmount and mount  // no{} 
-    const [isLoading, setIsLoading] = useState(false); 
+    const [isLoading, setIsLoading] = useState(false); // is this doing anything?
 
     const playerurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players'; //blocked by cors 
     const url = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json';  //works by itselfs without cors, stops at 24 arrays, max 429    
@@ -32,10 +32,10 @@ function ApiBE() {
         .catch(error => 
             console.log("ApiBE.js: error", error),
             setIsLoading(false));
-    }, [playerList] );  // should be empty so it doesn't repeat, but won't work otherwise added , 1 to make it only loop once, but failed also with url. 
+    });  // should be empty so it doesn't repeat, but won't work otherwise added , 1 to make it only loop once, but failed also with url. 
 
     return [ isLoading, playerList ], 
-    <div> <h3> hi, coming from ApiBe.js </h3></div>; 
+    <div> <h3> hi, coming from ApiBe.js </h3> </div>; 
 
 };
 
