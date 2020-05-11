@@ -17,11 +17,11 @@ function ApiBE() {
             
                 // axios.get(cors + playerurl)   // undefined console.log empty array
                 // axios.get(playerurl)   //blocked by cors 
-                axios.get(url)    // undefined console.log empty array
+                axios.get(playerurl)    // undefined console.log empty array
                 .then(res => 
                 // list = res.data,
                 // console.log(list),
-                console.log("res.data", res.data.values),   
+                console.log("res.data", res.data),   
                 setIsLoading(false))
             .catch(error => 
                 console.log("ApiBE.js: error", error),
