@@ -13,19 +13,26 @@ function ApiBE() {
 
     useEffect(() => {
             setIsLoading(true); 
-            console.log(isLoading); //false √  
-                axios.get(url)    
+            console.log(isLoading); //false
+            
+                // axios.get(cors + playerurl)   // undefined console.log empty array
+                // axios.get(playerurl)   //blocked by cors 
+                axios.get(url)    // undefined console.log empty array
                 .then(res => 
-                console.log("res.data", res.data),   
+                // list = res.data,
+                // console.log(list),
+                console.log("res.data", res.data.values),   
                 setIsLoading(false))
             .catch(error => 
                 console.log("ApiBE.js: error", error),
                 setIsLoading(false));
+            
+            
         }, []);  
 
     return (
     <div> 
-        <h3> hi, coming from ApiBe.js </h3> 
+        <h3> We have data! </h3> 
         <div> players </div> 
     </div>
     )
