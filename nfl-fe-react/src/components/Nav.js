@@ -8,7 +8,7 @@ function Nav () {
   return (
     <NavSection className="nav">
       <Logo className="Logo-Area"> 
-        <img src={{tacklemytradelogo}} alt="tacklemytrade.com" /> 
+        <img src={tacklemytradelogo} alt="tacklemytrade.com" /> 
         </Logo>
         <Anchors className="Link-Area" > 
           <Testanchor href="https://www.tacklemytrade.com"> Home </Testanchor>
