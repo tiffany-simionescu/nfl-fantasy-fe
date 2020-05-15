@@ -31,8 +31,7 @@ function Footer () {
   )
 }
 
-const FooterSection = styled.div`
-border: 2px solid red; 
+const FooterSection = styled.div` 
 width: 100%;
 background: #007090;
 padding: 2rem; 
@@ -43,7 +42,6 @@ padding: 1rem;
 `
 
 const Testanchor = styled.a`
-border: 2px solid red; 
 color:#eeeeff;
 padding: 3rem;
 font-size: 1.25rem; 
