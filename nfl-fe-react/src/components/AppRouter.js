@@ -9,7 +9,6 @@ export default function AppRouter() {
     return (
         <Router>
             <Route path="/results" component={ResultsPage} />
-            <Route path="/results" component={ResultsPage} />
             {/* <Route path="/search" component={Search} /> */}
             <Route exact path="/" component={ApiBE} />
         </Router>
