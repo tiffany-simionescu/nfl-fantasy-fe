@@ -21,7 +21,7 @@ function Nav () {
 export default Nav;
 
 const NavSection = styled.div`
-border: 2px soild red; 
+border: 2px solid red; 
 display: inline-flex; 
 background: #007090;
 width: 100%; 
