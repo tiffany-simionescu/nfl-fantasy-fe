@@ -34,8 +34,10 @@ function ApiBE() {
 
     return (
     <div> 
-        <h3> We have data! </h3> 
-        <div> players </div> 
+
+        {/* <h3> hi, coming from ApiBe.js </h3>  */}
+        {/* <div> players </div>  */}
+
     </div>
     )
 }
