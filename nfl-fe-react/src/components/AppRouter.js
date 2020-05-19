@@ -9,8 +9,7 @@ import userGuide from "./userGuide.js";
 export default function AppRouter() {
     return (
         <Router>
-            <Route path="/results" component={ResultsPage} />
-            <Route path="/results" component={ResultsPage} />
+            <Route exact path="/" component={ResultsPage} />
             {/* <Route path="/search" component={Search} /> */}
             <Route exact path="/" component={ApiBE} />
             <Route exact path="/" component={userGuide} />
