@@ -8,10 +8,10 @@ function ApiBE() {
     const [isLoading, setIsLoading] = useState(false); 
 
     const cors = 'https://cors-anywhere.herokuapp.com/'; // don't help anywhere 
-    const playerurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players'; //blocked by cors 
+    const playerurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players.json'; //blocked by cors 
 
 
-    const url = ('https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json');
+    // const url = ('https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json');
 
     useEffect(() => {
             setIsLoading(true); 
@@ -19,7 +19,7 @@ function ApiBE() {
             
                 // axios.get(cors + playerurl)   // undefined console.log empty array
                 // axios.get(playerurl)   //blocked by cors 
-                axios.get(playerurl)    // undefined console.log empty array
+                axios.get(cors + playerurl)    // undefined console.log empty array
                 .then(res => 
                 // list = res.data,
                 // console.log(list),
