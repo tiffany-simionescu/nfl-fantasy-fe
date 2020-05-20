@@ -7,10 +7,10 @@ function ApiBE() {
     const [playerList, setPlayerList] = useState([]);  
     const [isLoading, setIsLoading] = useState(false); 
 
-    const cors = 'https://cors-anywhere.herokuapp.com/'; // don't help anywhere 
-    const playerurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players'; //blocked by cors 
+    // const cors = 'https://cors-anywhere.herokuapp.com/'; 
+    // const playerurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players'; //blocked by cors 
 
-    const queryurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players/?Id=1&PlayerFull=4'; 
+    // const queryurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players/?Id=1&PlayerFull=4'; 
 
     const url = ('https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json');
 
@@ -32,12 +32,12 @@ function ApiBE() {
             
         }, []);  
 
-        playerList.map(setPlayerList => console.log(setPlayerList))
+        playerList.map(PlayerList => console.log(PlayerList))
 
     return (
     <div> 
         <h3> We have data! </h3> 
-        <div> player name:  </div> 
+        <div> players data: {playerList} </div> 
     </div>
     )
 }
