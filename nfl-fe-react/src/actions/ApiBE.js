@@ -12,16 +12,18 @@ function ApiBE() {
 
     // const queryurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players/?Id=1&PlayerFull=4'; 
 
-    const url = ('https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json');
+    // const url = ('https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json');
+
+    const thisurl = ('https://tacklemytrade.herokuapp.com/api/players/')
 
     useEffect(() => {
             setIsLoading(true); 
             console.log(isLoading); 
             
-                axios.get(url) 
+                axios.get(thisurl) 
                 .then(response => {
-                    setPlayerList(response.data.values);
-                    console.log("res", response.data.values);
+                    // setPlayerList(response.data.values);
+                    console.log("res", response);
                 //res.data.values[0][4], 
                 // [0] first person in array of 24, [4] the full name of each player.   
                     setIsLoading(false)}
@@ -32,7 +34,7 @@ function ApiBE() {
             
         }, []);  
 
-        playerList.map(PlayerList => console.log(PlayerList))
+        // playerList.map(PlayerList => console.log(PlayerList))
 
     return (
     <div> 
