@@ -6,6 +6,7 @@ import { createBrowserHistory } from 'history';
 import Footer from "./components/Footer.js";
 import Nav from "./components/Nav.js";
 
+
 // Google Analytics for the whole app
     ReactGA.initialize('UA-145773395-3');
     const history = createBrowserHistory();

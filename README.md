@@ -1,49 +1,36 @@
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.
 
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
+ ## NFL Fantasy Football Trade Anaylzer
 
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
+ You can find the deployed project at http://www.tacklemytrade.com/
 
-# 1️⃣ Title of project goes here
+ ## Contributors
 
-1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
-
-## 4️⃣ Contributors
-
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
-
-|                                       [Student 1](https://github.com/)                                        |                                       [Student 2](https://github.com/)                                        |                                       [Student 3](https://github.com/)                                        |                                       [Student 4](https://github.com/)                                        |                                       [Student 5](https://github.com/)                                        |
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+|                                       [Thatcher Phan](https://github.com/Th5tch3r)                                        |                                       [Laura Theimer](https://github.com/lauralyeinc)                                        |                                       [Joshua Doan](https://github.com/doanmade)                                        |                                       [Tiffany Simionescu](https://github.com/tiffany-simionescu)                                                           |
+| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
+|                      [<img src="https://avatars3.githubusercontent.com/u/49928461?s=460&u=8bcddfb35e84b632c8550d1a362efb1df1921626&v=4" width = "200" />](https://github.com/Th5tch3r)                       |                      [<img src="https://avatars1.githubusercontent.com/u/52268790?s=460&v=4" width = "200" />](https://github.com/lauralyeinc)                       |                      [<img src="https://ca.slack-edge.com/ESZCHB482-W012JHQ0T2N-48b400e3487b-512" width = "200" />](https://github.com/doanmade)                       |                      [<img src="https://avatars3.githubusercontent.com/u/42684183?s=460&u=6350285357ccb2175cd8b98b2fbd951c27e35b89&v=4" width = "200" />](https://github.com/tiffany-simionescu)                       |                       
+|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Th5tch3r)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/lauralyeinc)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/doanmade)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/tiffany-simionescu)           |            
+| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/theimerlaura) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/josh-doan-50a72920/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/in/tiffanysimionescu/) | 
 
 <br>
 <br>
-
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/92a8bccfc4cbed259b32/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/nfl-fantasy-fe/maintainability)
 🚫 more info on using badges [here](https://github.com/badges/shields)
 
-## Project Overview
+Project Overview
 
-1️⃣ [Trello Board](🚫add link to trello board here)
+ [Trello Board] https://trello.com/b/GR22EAEc/nfl-fantasy-perfect-trade
 
-1️⃣ [Product Canvas](🚫add link to product canvas here)
+ [Product Canvas] https://www.notion.so/NFL-Fantasy-Perfect-Trade-881bd44def114fda8cffd8ccc362caf0
 
-1️⃣ [UX Design files](🚫add link to design files here) - 🚫 delete if not applicable
+ [UX Design files] https://drive.google.com/drive/folders/1ITqPq3QO9YYWnI4oXH267EZuELNh-yTQ 
 
-🚫 Replace lorem ipsum with a description of your project
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Tackle My Trade NFL Fantasy Football Trade Anaylzer is to help a fan to build their ultimate fantasy league, by making the optinmal trades trades to win their fantasy competions.  The application is user friendly for new fans that want to enjoy another excitment but not just watching the game, but having their own team to score points to win the bragging rights for each season.  It's also packed full, (not current release) of predictions and more stats for more advanced fans.  
 
 
 ### 4️⃣ Key Features

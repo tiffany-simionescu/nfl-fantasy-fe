@@ -1,17 +1,44 @@
 import React from 'react';
+import styled from "styled-components"; 
+import tacklemytradelogo from "../styling/images/tacklemytradelogo.jpg"; 
+
 
 function Nav () {
   return (
-    <div className="nav">
-      <div className="Logo-Area"> <h1> Tackle My Trade</h1> </div>
-      <a href="#" className="footer-item">
-        Home
-      </a>
-      <a href="#" className="footer-item">
-        How To Play
-      </a>
-    </div>
+    <NavSection className="nav">
+      <div className="Logo-Area"> 
+        <img src={tacklemytradelogo} height="150px"  alt="tacklemytrade.com" /> 
+        </div>
+        <Anchors className="Link-Area" > 
+          <Testanchor href="http://tacklemytrade.com/"> Home </Testanchor>
+          <Testanchor href="#"> About Us</Testanchor>
+          <Testanchor href="#" > How To Play </Testanchor>
+        </Anchors> 
+    </NavSection> 
   )
 }
 
 export default Nav;
+
+const NavSection = styled.div`
+display: inline-flex; 
+background: #007090;
+width: 100%; 
+`
+
+
+
+const Anchors = styled.div`
+font-size: 1.5rem; 
+display: flex; 
+align-items: center; 
+` 
+
+const Testanchor = styled.a`
+color:#eeeeff;
+padding: 3rem;
+cursor: pointer;  
+&:hover {
+  color: #ffa630;
+  }
+`
