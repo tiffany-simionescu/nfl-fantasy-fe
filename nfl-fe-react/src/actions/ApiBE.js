@@ -11,20 +11,25 @@ function ApiBE() {
     const playerurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players'; //blocked by cors 
 
 
-    const url = ('https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json');  //the whole data table 
+    const url = ('https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json');
 
     useEffect(() => {
             setIsLoading(true); 
             console.log(isLoading); 
             
-                axios.get(cors + playerurl)    
+                // axios.get(cors + playerurl)   // undefined console.log empty array
+                // axios.get(playerurl)   //blocked by cors 
+                axios.get(url)    // undefined console.log empty array
                 .then(res => 
-                console.log("res.data", res.data),   
+                // list = res.data,
+                // console.log(list),
+                console.log("res.data", res.data.values),
+                //res.data.values[0][4] 
+                // [0] first person in array of 24, [4] the full name of each player.   
                 setIsLoading(false))
             .catch(error => 
                 console.log("ApiBE.js: error", error),
                 setIsLoading(false));
-            
             
         }, []);  
 
