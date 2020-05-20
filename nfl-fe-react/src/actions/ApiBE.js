@@ -19,18 +19,20 @@ function ApiBE() {
             console.log(isLoading); 
             
                 axios.get(url) 
-                // .then(res => res.json())  not a function 
-                .then(res => 
-                console.log("res", //res.data.values, //res.data,
-                // res.data.values),
-                res.data.values[0][4]),
+                .then(response => {
+                    setPlayerList(response.data.values);
+                    console.log("res", response.data.values);
+                //res.data.values[0][4], 
                 // [0] first person in array of 24, [4] the full name of each player.   
-                setIsLoading(false))
+                    setIsLoading(false)}
+                )
             .catch(error => 
                 console.log("ApiBE.js: error", error),
                 setIsLoading(false));
             
         }, []);  
+
+        playerList.map(setPlayerList => console.log(setPlayerList))
 
     return (
     <div> 
