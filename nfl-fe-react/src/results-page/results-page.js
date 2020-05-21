@@ -6,8 +6,8 @@ import { Form } from 'semantic-ui-react';
 import ResultsCard from './results-card.js';
 
 const initial_state = {
-  player0_id: "",
-  player1_id: "",
+  player0_name: "",
+  player1_name: "",
   week: "",
   searchResults: [],
 }
@@ -17,9 +17,9 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
     
     const handleSubmit = async event => {
       event.preventDefault();
-      const { player0_id, player1_id, week} = state;
+      const { player0_name, player1_name, week} = state;
       onFormSubmit(state);
-      const searchResults = await searchNflPLayers({ player0_id, player1_id, week });
+      const searchResults = await searchNflPLayers({ player0_name, player1_name, week });
       setState({ ...state, searchResults });
       console.log(searchResults)
     };
@@ -29,12 +29,13 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
       ...state, 
       [event.target.name]: event.target.value
     });
+    console.log(event.target.value);
   };
 
-  const searchNflPLayers = async ({ player0_id, player1_id, week }) => {
+  const searchNflPLayers = async ({ player0_name, player1_name, week }) => {
     try {
       const { data: { data: searchResults } = {} } = await axios.get(
-        `https://nfl-perfect-trader.herokuapp.com/api/trade/?player0_id=${player0_id}&player1_id=${player1_id}&week=${week}`
+        `https://nfl-perfect-trader.herokuapp.com/api/trade/?player0_id=${player0_name}&player1_id=${player1_name}&week=${week}`
       );
       return searchResults;
     } catch (err) {
@@ -44,7 +45,7 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
   }
 
 
-  const { player0_id, player1_id, week } = state;
+  const { player0_name, player1_name, week } = state;
 
   const PlayersStat = state.searchResults.map(result => {
     return (
@@ -66,15 +67,15 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
         <Form onSubmit={handleSubmit}>
           <Form.Input 
             type="text"
-            name="player0_id"
-            value={player0_id}
+            name="player0_name"
+            value={player0_name}
             onChange={handleChange}
             placeholder="1st player"
           />
           <Form.Input 
             type="text"
-            name="player1_id"
-            value={player1_id}
+            name="player1_name"
+            value={player1_name}
             onChange={handleChange}
             placeholder="2nd player"
           />
