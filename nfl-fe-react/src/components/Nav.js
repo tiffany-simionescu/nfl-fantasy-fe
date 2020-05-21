@@ -11,8 +11,8 @@ function Nav () {
         </div>
         <Anchors className="Link-Area" > 
           <Testanchor href="http://tacklemytrade.com/"> Home </Testanchor>
-          <Testanchor href="http://tacklemytrade.com/howtoguide"> About Us</Testanchor>
-          <Testanchor href="#" > How To Play </Testanchor>
+          <Testanchor href="#"> About Us</Testanchor>
+          <Testanchor href="http://tacklemytrade.com/howtoguide" > How To Play </Testanchor>
         </Anchors> 
     </NavSection> 
   )
