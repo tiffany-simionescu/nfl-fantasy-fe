@@ -10,7 +10,6 @@ function userGuide() {
                 Looking at the predicted score, the highest score wins. That player is predicted to get more points per game. The points you could win are based on how your fantasy football league is set up.  
                 Ranking is also important because that means they are the top scoring player. The Higher the number, the better amount of points they are projected to make during each game.  It's all about having the highest rank, #1, and the most points per game. That's the basics of using the Trade Analyzer. 
                 </h4>
-
             </div>
     )
 }
