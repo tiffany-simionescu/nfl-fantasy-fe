@@ -7,38 +7,45 @@ function ApiBE() {
     const [playerList, setPlayerList] = useState([]);  
     const [isLoading, setIsLoading] = useState(false); 
 
-    const cors = 'https://cors-anywhere.herokuapp.com/'; // don't help anywhere 
-    const playerurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players.json'; //blocked by cors 
 
-    const queryurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players/?Id=1&PlayerFull=4'; 
+    // const cors = 'https://cors-anywhere.herokuapp.com/'; 
+    // const playerurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players'; //blocked by cors 
+
+
+    // const queryurl = 'https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb/api/players/?Id=1&PlayerFull=4'; 
 
     // const url = ('https://data.heroku.com/dataclips/rwhkccnmdgnbgemujsjivyshywlb.json');
+
+
+    const thisurl = ('https://tacklemytrade.herokuapp.com/api/players/')
+
 
     useEffect(() => {
             setIsLoading(true); 
             console.log(isLoading); 
             
 
-                // axios.get(cors + playerurl)   // undefined console.log empty array
-                // axios.get(playerurl)   //blocked by cors 
-                axios.get(cors + playerurl)    // undefined console.log empty array
+                axios.get(thisurl) 
+                .then(response => {
+                    // setPlayerList(response.data.values);
+                    console.log("res", response);
+                //res.data.values[0][4], 
 
-                .then(res => 
-                console.log("res", //res.data.values, //res.data,
-                // res.data.values),
-                res.data.values[0][4]),
                 // [0] first person in array of 24, [4] the full name of each player.   
-                setIsLoading(false))
+                    setIsLoading(false)}
+                )
             .catch(error => 
                 console.log("ApiBE.js: error", error),
                 setIsLoading(false));
             
         }, []);  
 
+        // playerList.map(PlayerList => console.log(PlayerList))
+
     return (
     <div> 
         <h3> We have data! </h3> 
-        <div> player name:  </div> 
+        <div> players data: {playerList} </div> 
     </div>
     )
 }
