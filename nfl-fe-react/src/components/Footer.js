@@ -8,17 +8,6 @@ import share from "../styling/icomoon/PNG/share.png";
 
 function Footer () {
   return (
-<<<<<<< HEAD
-    <div className="footer">
-      <a href="#" classname="footer-item">
-        Home
-      </a>
-      <a href="#" classname="footer-item">
-        How To Play
-      </a>
-      <div classname="copyright">
-          Copyright © 2020 Tackle My Trade. All Rights Reserved
-=======
     <FooterSection className="footer">
       <div className="Social-Media">
         <h3> Keep updated on players, content adds or share with your friends </h3> <Icons src={share} alt="share icon" />
@@ -37,7 +26,6 @@ function Footer () {
       <div className="copyright">
           <h5>Copyright © 2020 Tackle My Trade. All Rights Reserved</h5>
       </div>
->>>>>>> fa8e9e26bec6aeb1daa392ce3f6103370fca5576
       </div>
     </FooterSection>
   )
