@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Form } from 'semantic-ui-react';
 
 import ResultsCard from './results-card.js';
+import styled from "styled-components"; 
 
 const initial_state = {
   player0_name: "",
@@ -65,6 +66,7 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
     <React.Fragment>
       <div>
         <Form onSubmit={handleSubmit}>
+          <H3> Team 1 </H3>
           <Form.Input 
             type="text"
             name="player0_name"
@@ -72,6 +74,7 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
             onChange={handleChange}
             placeholder="1st player"
           />
+          <H3> Team 2 </H3>
           <Form.Input 
             type="text"
             name="player1_name"
@@ -79,6 +82,7 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
             onChange={handleChange}
             placeholder="2nd player"
           />
+          <H3> Week </H3>
           <Form.Input 
             type="number"
             name="week"
@@ -86,7 +90,9 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
             onChange={handleChange}
             placeholder="week number"
           />
+          <ButtonArea className="ButtonDiv"> 
           <Form.Button type="submit">Submit</Form.Button>
+          </ButtonArea>
         </Form>
       </div>
 
@@ -95,6 +101,15 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
     </React.Fragment>
   );
 };
+
+const H3 = styled.h3`
+text-align: justify;
+`
+
+const ButtonArea =styled.div`
+padding: 2rem; 
+`
+
 
 export default SearchPlayersStatForm;
 
