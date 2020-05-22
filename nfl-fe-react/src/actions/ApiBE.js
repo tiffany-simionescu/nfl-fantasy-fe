@@ -1,6 +1,7 @@
 import axios from "axios"; 
 import React, {useState, useEffect} from "react"; 
 
+<<<<<<< HEAD
 function ApiBE() {
     const [playerList, setplayerList] = useState();  
     // no[] <- runs on unmount and mount  // no{} 
@@ -100,6 +101,36 @@ function ApiBE() {
 //     }
 // }
 
+=======
+
+function ApiBE() {
+    const [playerList, setPlayerList] = useState([]);  
+    const [isLoading, setIsLoading] = useState(false); 
+
+    const thisurl = ('https://tacklemytrade-api.herokuapp.com/api/players')
+
+    useEffect(() => {
+            setIsLoading(true); 
+            console.log(isLoading); 
+                axios.get(thisurl) 
+                .then(response => {
+                    setPlayerList(response.data);
+                    console.log("res.data", response.data);  
+                    setIsLoading(false)}
+                )
+            .catch(error => 
+                console.log("ApiBE.js: error", error),
+                setIsLoading(false));
+        }, []);  
+
+        playerList.map(PlayerList => console.log(PlayerList))
+
+    return (
+    <div>
+    </div>
+    )
+}
+>>>>>>> fa8e9e26bec6aeb1daa392ce3f6103370fca5576
 
 
 export default ApiBE; 
