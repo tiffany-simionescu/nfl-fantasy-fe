@@ -12,7 +12,7 @@ export default function AppRouter() {
             <Route exact path="/" component={ResultsPage} />
             {/* <Route path="/search" component={Search} /> */}
             <Route exact path="/" component={ApiBE} />
-            <Route exact path="/" component={userGuide} />
+            <Route path="/howtoguide" component={userGuide} />
         </Router>
     )
 }
