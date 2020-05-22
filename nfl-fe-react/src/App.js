@@ -5,6 +5,7 @@ import ReactGA from 'react-ga';
 import { createBrowserHistory } from 'history';
 import Footer from "./components/Footer.js";
 import Nav from "./components/Nav.js";
+import styled from "styled-components"; 
 
 
 // Google Analytics for the whole app
@@ -25,9 +26,10 @@ function App() {
                 <Nav />
             </div>
 
-            <div className="Main-Area">
+            <MainDiv className="Main-Area">
+            <h2> Fantasy Football Trade Analyzer </h2>
             <AppRouter/>
-            </div>
+            </MainDiv>
 
             <div className="Foot-Area">
             </div>
@@ -39,3 +41,10 @@ function App() {
 
 
 export default App;
+
+const MainDiv = styled.div`
+width: 85%;
+height: 55rem; 
+margin: 0 auto; 
+padding: 3rem; 
+`
