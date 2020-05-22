@@ -39,7 +39,6 @@ function App() {
 };
 
 
-
 export default App;
 
 const MainDiv = styled.div`

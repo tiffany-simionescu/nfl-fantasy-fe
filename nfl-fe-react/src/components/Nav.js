@@ -10,7 +10,7 @@ function Nav () {
         <img src={tacklemytradelogo} height="150px"  alt="tacklemytrade.com" /> 
         </div>
         <Anchors className="Link-Area" > 
-          <Testanchor href="https://www.tacklemytrade.com/"> Home </Testanchor>
+          <Testanchor href="/"> Home </Testanchor>
           <Testanchor href="#"> About Us</Testanchor>
           <Testanchor href="/howtoguide" > How To Play </Testanchor>
         </Anchors> 
