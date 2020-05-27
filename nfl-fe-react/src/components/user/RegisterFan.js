@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import axios from "axios"; 
 
 const RegisterFan = props => {
-    const { errors, touched, status } = props; 
+    const { values, errors, touched, status, setFieldValue } = props; 
     const [fans, setFans] = useState([]);
     const [errorMessage, setErrorMessage] = useState("");
 
@@ -13,7 +13,7 @@ const RegisterFan = props => {
         console.log("RegisterFan.js: status has changed!", status);
         status && setFans([... fans, status]);
         if(status !== undefined) {
-            props.history.push('/dashboard-fan');    //!!!!
+            props.history.push('/dashboard/:id');    //!!!! fan's dashboard with their id #. 
         }
         console.log("RegisterFan.js: Status:", status);
         console.log(" RegisterFan.js: Fans:", fans);
@@ -71,7 +71,7 @@ const RegisterFan = props => {
     );
 };
 
-const myMapPropsToValue = props => {
+const myMapPropsToValues = props => {
     console.log("RegisterFan.js: myMapPropsToValues", props);
     return{
         username: props.username || "",
