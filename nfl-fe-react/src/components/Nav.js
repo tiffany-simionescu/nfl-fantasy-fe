@@ -16,6 +16,7 @@ function Nav () {
         </Anchors> 
         <Anchors>
           <Testanchor href="/registerfan"> Register </Testanchor>
+          <Testanchor href="/login"> Login </Testanchor>
         </Anchors>
     </NavSection> 
   )
