@@ -5,7 +5,8 @@ import ResultsPage from '../results-page/results-page.js';
 import Search from './SearchBar.js';
 import ApiBE from "../actions/ApiBE.js"; 
 import userGuide from "./userGuide.js"; 
-import RegisterFan from "../components/user/RegisterFan.js"; 
+import RegisterFan from "../components/user/RegisterFan.js";
+import LoginFan from "../components/user/LoginFan.js";  
 
 export default function AppRouter() {
     return (
@@ -15,6 +16,7 @@ export default function AppRouter() {
             <Route exact path="/" component={ApiBE} />
             <Route path="/howtoguide" component={userGuide} />
             <Route path="/registerfan" component={RegisterFan} />
+            <Route path="/login" component={LoginFan} />
         </Router>
     )
 }
