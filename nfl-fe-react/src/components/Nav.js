@@ -14,6 +14,9 @@ function Nav () {
           <Testanchor href="#"> About Us</Testanchor>
           <Testanchor href="/howtoguide" > How To Play </Testanchor>
         </Anchors> 
+        <Anchors>
+          <Testanchor href="/registerfan"> Register </Testanchor>
+        </Anchors>
     </NavSection> 
   )
 }
