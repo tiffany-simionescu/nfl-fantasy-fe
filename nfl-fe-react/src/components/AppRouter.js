@@ -15,7 +15,7 @@ export default function AppRouter() {
             {/* <Route path="/search" component={Search} /> */}
             <Route exact path="/" component={ApiBE} />
             <Route path="/howtoguide" component={userGuide} />
-            <Route path="/registerfan" component={RegisterFan} />
+            <Route path="/register" component={RegisterFan} />
             <Route path="/login" component={LoginFan} />
         </Router>
     )

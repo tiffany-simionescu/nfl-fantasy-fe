@@ -33,7 +33,7 @@ const LoginFan = props => {
         <div className="FanCard">
             <div className="LoginIn-Form">
                 <Form>
-                    <h2> Fan Sign In </h2>
+                    <h2> Login </h2>
                     <label htmlFor="name">
                         Username
                         <Field
@@ -82,7 +82,7 @@ const FormikSignUp = withFormik({
     handleSubmit(values, {setStatus, resetForm, setErrors }){
         console.log("LoginFan.js: FormikSignUp submitting", values);
         axios
-            .post("", values) // !!!!!!!
+            .post("https://tacklemytrade-api.herokuapp.com/api/fans/login", values) // !!!!!!!
             .then(res => {
                 console.log("LoginFan.js: Login Fan Sucness, RES:", res); //!!!!!
                 localStorage.setItem("fan-token", res.data.token);  // !!!!!!
