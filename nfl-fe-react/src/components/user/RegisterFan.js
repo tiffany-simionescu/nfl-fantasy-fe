@@ -77,7 +77,7 @@ const RegisterFan = props => {
                         )}
                     </label>
 
-                    <lable htmlFor="lastname">
+                    <label htmlFor="lastname">
                         Last Name
                         <Field
                         id="lastname"
@@ -88,7 +88,7 @@ const RegisterFan = props => {
                         {touched.lastname && errors.lastname && (
                             <p className="errors">{errors.lastname}</p>
                         )}
-                    </lable>
+                    </label>
 
                     <label htmlFor="city">
                         City
@@ -138,7 +138,7 @@ const RegisterFan = props => {
 
 const myMapPropsToValues = props => {
     console.log("RegisterFan.js: myMapPropsToValues", props);
-    return{
+    return {
         username: props.username || "",
         password: props.password || "",
         email: props.email || "",
@@ -146,19 +146,19 @@ const myMapPropsToValues = props => {
         lastname: props.lastname || "",
         city: props.city || "",
         state: props.state || "",
-        profileImgURL: props.profileImgURL || "", 
-        props: props
+        profileImgURL: props.profileImgURL || "",   // can always take out
+        props: props    // not sure what this does 
     };
 };
 
 const myHandleSubmit = (values, { setStatus, resetForm, setErrors }) => {
     console.log("RegisterFan.js: RegisterFan.js: POST RQ VALUES", values); 
     axios
-        .post("https://tacklemytrade-api.herokuapp.com/api/fans/register", values)  // !!!!!!
+        .post("https://tacklemytrade-api.herokuapp.com/api/fans/register", values)  // should be good 
         .then(res => {
-            console.log("RegisterFan.js: POST RES", res.data, res.data.tokens);  ///!!!!!!
+            console.log("RegisterFan.js: POST RES", res.data, res.data.tokens);  // !!!!!
             localStorage.setItem("token", res.data.token);  //!!!!!
-            setStatus(res.data.newFan); //!!!!
+            setStatus(res.data.newFan); //!!!! newFan? 
             resetForm();
         })
         .catch(error => {
@@ -168,14 +168,14 @@ const myHandleSubmit = (values, { setStatus, resetForm, setErrors }) => {
 };
 
 const yupSchema = Yup.object().shape({
-    username: Yup.string().required("This is required"),
-    password: Yup.string().required("This is required"),
-    email: Yup.string().required("This is required"),
-    firstname: Yup.string().required("This is required"),
-    lastname: Yup.string().required("This is required"),
-    city: Yup.string().required("This is required"),
-    state: Yup.string().required("This is required"),
-    profileImgUrl: Yup.string().required("This is required")
+    username: Yup.string().required("Required"),
+    password: Yup.string().required("Required"),
+    email: Yup.string().required("Required"),
+    firstname: Yup.string().required("Required"),
+    lastname: Yup.string().required("Required"),
+    city: Yup.string().required("Required"),
+    state: Yup.string().required("Required"),
+    profileImgUrl: Yup.string().required("Required")
 });
 
 const formikObj = {
