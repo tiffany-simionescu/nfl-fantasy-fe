@@ -17,7 +17,7 @@ const LoginFan = props => {
         status && props.setCurrentFan(status);
         
         if(status !== undefined) {
-            props.history.push("/dashboard");  //!!!
+            props.history.push("/api/fan/:id");  //!!!
         }
         console.log("LoginFan.js: Status", status);
         console.log("LoginFan.js, errors", errors); 
@@ -26,7 +26,7 @@ const LoginFan = props => {
 
     //redirects fan to dashboard if alread logged in
     if(localStorage.getItem("token")) {
-        return <Redirect to="/dashboard" />; 
+        return <Redirect to="/dashboard" /> 
     }
 
     return (
@@ -86,7 +86,7 @@ const FormikSignUp = withFormik({
         axios
             .post("https://tacklemytrade-api.herokuapp.com/api/fans/login", values) // !!!!!!!
             .then(res => {
-                console.log("LoginFan.js: Login Fan Sucness, RES:", res); //!!!!!
+                console.log("LoginFan.js: Login Fan Sucess, RES:", res); //!!!!!
                 localStorage.setItem("token", res.data.token);  // !!!!!!
                 setStatus(res.data.fan); //!!!!!
                 resetForm(); 

@@ -13,7 +13,7 @@ const RegisterFan = props => {
         console.log("RegisterFan.js: status has changed!", status);
         status && setFans([... fans, status]);
         if(status !== undefined) {
-            props.history.push('/dashboard/:id');    //!!!! fan's dashboard with their id #. 
+            props.history.push('/api/fans/:id');    //!!!! fan's dashboard with their id #. 
         }
         console.log("RegisterFan.js: Status:", status);
         console.log(" RegisterFan.js: Fans:", fans);
@@ -85,7 +85,7 @@ const RegisterFan = props => {
                         name="lastname"
                         placeholder="Last Name"
                         />
-                        {touched.lastname && errors.lastname (
+                        {touched.lastname && errors.lastname && (
                             <p className="errors">{errors.lastname}</p>
                         )}
                     </lable>
@@ -98,7 +98,7 @@ const RegisterFan = props => {
                         name="city"
                         placeholder="City"
                         />
-                        {touched.city && errors.city (
+                        {touched.city && errors.city && (
                             <p className="errors">{errors.city}</p>
                         )}
                     </label>
@@ -111,7 +111,7 @@ const RegisterFan = props => {
                         name="state"
                         placeholder="State Example TX"
                         />
-                        {touched.state && errors.state (
+                        {touched.state && errors.state && (
                             <p className="errors">{errors.state}</p>
                         )}
                     </label>
