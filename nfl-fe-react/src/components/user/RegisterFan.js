@@ -51,6 +51,71 @@ const RegisterFan = props => {
                         )}
                     </label>
 
+                    <label htmlFor="email">
+                        Email
+                        <Field
+                        id="email"
+                        type="text"
+                        name="email"
+                        placeholder="Email"
+                        />
+                        {touched.email && errors.email && (
+                            <p className="errors">{errors.email}</p>
+                        )}
+                    </label>
+
+                    <label htmlFor="firstname">
+                        First Name 
+                        <Field
+                        id="firstname"
+                        type="string"
+                        name="firstname"
+                        placeholder="First Name"
+                        />
+                        {touched.firstname && errors.firstname && (
+                            <p className="errors">{errors.firstname}</p>
+                        )}
+                    </label>
+
+                    <lable htmlFor="lastname">
+                        Last Name
+                        <Field
+                        id="lastname"
+                        type="string"
+                        name="lastname"
+                        placeholder="Last Name"
+                        />
+                        {touched.lastname && errors.lastname (
+                            <p className="errors">{errors.lastname}</p>
+                        )}
+                    </lable>
+
+                    <label htmlFor="city">
+                        City
+                        <Field 
+                        id="city"
+                        type="string"
+                        name="city"
+                        placeholder="City"
+                        />
+                        {touched.city && errors.city (
+                            <p className="errors">{errors.city}</p>
+                        )}
+                    </label>
+
+                    <label htmlFor="state">
+                        State
+                        <Field
+                        id="state"
+                        type="string"
+                        name="state"
+                        placeholder="State Example TX"
+                        />
+                        {touched.state && errors.state (
+                            <p className="errors">{errors.state}</p>
+                        )}
+                    </label>
+
                     <label htmlFor="profileImgURL">
                         Profile Image URL
                         <Field
@@ -76,6 +141,11 @@ const myMapPropsToValues = props => {
     return{
         username: props.username || "",
         password: props.password || "",
+        email: props.email || "",
+        firstname: props.firstname || "",
+        lastname: props.lastname || "",
+        city: props.city || "",
+        state: props.state || "",
         profileImgURL: props.profileImgURL || "", 
         props: props
     };
@@ -87,7 +157,7 @@ const myHandleSubmit = (values, { setStatus, resetForm, setErrors }) => {
         .post("", values)  // !!!!!!
         .then(res => {
             console.log("RegisterFan.js: POST RES", res.data, res.data.tokens);  ///!!!!!!
-            localStorage.setItem("fan-token", res.data.token);  //!!!!!
+            localStorage.setItem("token", res.data.token);  //!!!!!
             setStatus(res.data.newFan); //!!!!
             resetForm();
         })
@@ -100,6 +170,11 @@ const myHandleSubmit = (values, { setStatus, resetForm, setErrors }) => {
 const yupSchema = Yup.object().shape({
     username: Yup.string().required("This is required"),
     password: Yup.string().required("This is required"),
+    email: Yup.string().required("This is required"),
+    firstname: Yup.string().required("This is required"),
+    lastname: Yup.string().required("This is required"),
+    city: Yup.string().required("This is required"),
+    state: Yup.string().required("This is required"),
     profileImgUrl: Yup.string().required("This is required")
 });
 
