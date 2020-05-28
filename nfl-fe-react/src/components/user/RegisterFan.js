@@ -154,7 +154,7 @@ const myMapPropsToValues = props => {
 const myHandleSubmit = (values, { setStatus, resetForm, setErrors }) => {
     console.log("RegisterFan.js: RegisterFan.js: POST RQ VALUES", values); 
     axios
-        .post("", values)  // !!!!!!
+        .post("https://tacklemytrade-api.herokuapp.com/api/fans/register", values)  // !!!!!!
         .then(res => {
             console.log("RegisterFan.js: POST RES", res.data, res.data.tokens);  ///!!!!!!
             localStorage.setItem("token", res.data.token);  //!!!!!
