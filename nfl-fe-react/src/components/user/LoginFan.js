@@ -17,7 +17,7 @@ const LoginFan = props => {
         status && props.setCurrentFan(status);
         
         if(status !== undefined) {
-            props.history.push("/dashboard");  //!!!
+            props.history.push("/api/fan/:id");  //!!!
         }
         console.log("LoginFan.js: Status", status);
         console.log("LoginFan.js, errors", errors); 
@@ -25,22 +25,22 @@ const LoginFan = props => {
     }, [status]); 
 
     //redirects fan to dashboard if alread logged in
-    if(localStorage.getItem("fan-token")) {
-        return <Redirect to="/dashboard" />; 
+    if(localStorage.getItem("token")) {
+        return <Redirect to="/dashboard" /> 
     }
 
     return (
         <div className="FanCard">
             <div className="LoginIn-Form">
                 <Form>
-                    <h2> Fan Sign In </h2>
+                    <h2> Login </h2>
                     <label htmlFor="name">
                         Username
                         <Field
                         id="username"
                         type="text"
                         name="username"
-                        placeholder="username"
+                        placeholder="Username"
                         />
                         {touched.username && errors.username && (
                             <p classNam="errors">{errors.username}</p>
@@ -53,14 +53,16 @@ const LoginFan = props => {
                         id="password"
                         type="password"
                         name="password"
-                        placeholder="password"
+                        placeholder="Password"
                         />
                         {touched.password && errors.password && (
                             <p className="errors">{errors.password}</p>
                         )}
                     </label>
+
                     <button type="submit"> Login </button>
                 </Form>
+                {errorMessage ? <h3>{errorMessage}</h3> : null}
             </div>
         </div>
     );
@@ -70,7 +72,7 @@ const FormikSignUp = withFormik({
     mapPropsToValues(props) {
         return {
             username: props.username || "",
-            password: props.password || ""
+            password: props.password || "",
         };
     },
 
@@ -82,11 +84,11 @@ const FormikSignUp = withFormik({
     handleSubmit(values, {setStatus, resetForm, setErrors }){
         console.log("LoginFan.js: FormikSignUp submitting", values);
         axios
-            .post("", values) // !!!!!!!
+            .post("https://tacklemytrade-api.herokuapp.com/api/fans/login", values) // !!!!!!!
             .then(res => {
-                console.log("LoginFan.js: Login Fan Sucness, RES:", res); //!!!!!
-                localStorage.setItem("fan-token", res.data.token);  // !!!!!!
-                setStatus(res.data.user); //!!!!!
+                console.log("LoginFan.js: Login Fan Sucess, RES:", res); //!!!!!
+                localStorage.setItem("token", res.data.token);  // !!!!!!
+                setStatus(res.data.fan); //!!!!!
                 resetForm(); 
             })
             .catch(error => {

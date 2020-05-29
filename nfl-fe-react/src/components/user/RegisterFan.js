@@ -13,7 +13,7 @@ const RegisterFan = props => {
         console.log("RegisterFan.js: status has changed!", status);
         status && setFans([... fans, status]);
         if(status !== undefined) {
-            props.history.push('/dashboard/:id');    //!!!! fan's dashboard with their id #. 
+            props.history.push('/api/fans/:id');    //!!!! fan's dashboard with their id #. 
         }
         console.log("RegisterFan.js: Status:", status);
         console.log(" RegisterFan.js: Fans:", fans);
@@ -51,6 +51,71 @@ const RegisterFan = props => {
                         )}
                     </label>
 
+                    <label htmlFor="email">
+                        Email
+                        <Field
+                        id="email"
+                        type="text"
+                        name="email"
+                        placeholder="Email"
+                        />
+                        {touched.email && errors.email && (
+                            <p className="errors">{errors.email}</p>
+                        )}
+                    </label>
+
+                    <label htmlFor="firstname">
+                        First Name 
+                        <Field
+                        id="firstname"
+                        type="string"
+                        name="firstname"
+                        placeholder="First Name"
+                        />
+                        {touched.firstname && errors.firstname && (
+                            <p className="errors">{errors.firstname}</p>
+                        )}
+                    </label>
+
+                    <label htmlFor="lastname">
+                        Last Name
+                        <Field
+                        id="lastname"
+                        type="string"
+                        name="lastname"
+                        placeholder="Last Name"
+                        />
+                        {touched.lastname && errors.lastname && (
+                            <p className="errors">{errors.lastname}</p>
+                        )}
+                    </label>
+
+                    <label htmlFor="city">
+                        City
+                        <Field 
+                        id="city"
+                        type="string"
+                        name="city"
+                        placeholder="City"
+                        />
+                        {touched.city && errors.city && (
+                            <p className="errors">{errors.city}</p>
+                        )}
+                    </label>
+
+                    <label htmlFor="state">
+                        State
+                        <Field
+                        id="state"
+                        type="string"
+                        name="state"
+                        placeholder="State Example TX"
+                        />
+                        {touched.state && errors.state && (
+                            <p className="errors">{errors.state}</p>
+                        )}
+                    </label>
+
                     <label htmlFor="profileImgURL">
                         Profile Image URL
                         <Field
@@ -73,22 +138,27 @@ const RegisterFan = props => {
 
 const myMapPropsToValues = props => {
     console.log("RegisterFan.js: myMapPropsToValues", props);
-    return{
+    return {
         username: props.username || "",
         password: props.password || "",
-        profileImgURL: props.profileImgURL || "", 
-        props: props
+        email: props.email || "",
+        firstname: props.firstname || "",
+        lastname: props.lastname || "",
+        city: props.city || "",
+        state: props.state || "",
+        profileImgURL: props.profileImgURL || "",   // can always take out
+        props: props    // not sure what this does 
     };
 };
 
 const myHandleSubmit = (values, { setStatus, resetForm, setErrors }) => {
     console.log("RegisterFan.js: RegisterFan.js: POST RQ VALUES", values); 
     axios
-        .post("", values)  // !!!!!!
+        .post("https://tacklemytrade-api.herokuapp.com/api/fans/register", values)  // should be good 
         .then(res => {
-            console.log("RegisterFan.js: POST RES", res.data, res.data.tokens);  ///!!!!!!
-            localStorage.setItem("fan-token", res.data.token);  //!!!!!
-            setStatus(res.data.newFan); //!!!!
+            console.log("RegisterFan.js: POST RES", res.data, res.data.tokens);  // !!!!!
+            localStorage.setItem("token", res.data.token);  //!!!!!
+            setStatus(res.data.newFan); //!!!! newFan? 
             resetForm();
         })
         .catch(error => {
@@ -98,9 +168,14 @@ const myHandleSubmit = (values, { setStatus, resetForm, setErrors }) => {
 };
 
 const yupSchema = Yup.object().shape({
-    username: Yup.string().required("This is required"),
-    password: Yup.string().required("This is required"),
-    profileImgUrl: Yup.string().required("This is required")
+    username: Yup.string().required("Required"),
+    password: Yup.string().required("Required"),
+    email: Yup.string().required("Required"),
+    firstname: Yup.string().required("Required"),
+    lastname: Yup.string().required("Required"),
+    city: Yup.string().required("Required"),
+    state: Yup.string().required("Required"),
+    profileImgUrl: Yup.string().required("Required")
 });
 
 const formikObj = {
