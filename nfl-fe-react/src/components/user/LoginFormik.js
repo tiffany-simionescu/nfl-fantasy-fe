@@ -6,7 +6,7 @@ import axios from "axios";
 const LoginFormik = () => {
     return (
         <Formik
-            initialValuess={{
+            initialValues={{
                 username: '',
                 password: ''
             }}
