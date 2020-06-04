@@ -1,9 +1,26 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Redirect } from "react-router-dom"; 
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from "axios";
 
 const LoginFormik = () => {
+    //medium article example 
+    // const [redirect, setRedirect] = useState(false); 
+
+    // const Redirecting = () => {
+    //         this.props.history.push("/api/fans/:id")
+    // }
+
+    //learnwithparam article example
+    const AuthPage =({ isLoggedIn }) => {
+        if (isLoggedIn) {
+            return <Redirect to="/api/fans/:id" />;
+        } else {
+            return <h3> User is not Logged In!</h3>;
+        }
+    }; 
+
     return (
         <Formik
             initialValues={{
@@ -39,7 +56,10 @@ const LoginFormik = () => {
                     type="password"
                     />
                 <ErrorMessage name="password"/>
-            <button type="submit"> Login </button>            
+            <button 
+            // medium example 
+            // onClick={Redirecting} 
+            type="submit"> Login </button>            
         </Form>    
     </Formik>
     );

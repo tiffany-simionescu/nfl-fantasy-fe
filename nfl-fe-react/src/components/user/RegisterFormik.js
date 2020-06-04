@@ -27,7 +27,7 @@ const RegisterFormik = () => {
                 axios
                 .post("https://tacklemytrade-api.herokuapp.com/api/fans/register", values)  // should be good 
                 .then(res => {
-                    console.log("RegisterFormik.js: POST RES", res);  // !!!!!
+                    console.log("RegisterFan.js: POST RES", res);  // !!!!!
                     // resetForm();
                 })
                 .catch(error => {
@@ -78,7 +78,7 @@ const RegisterFormik = () => {
                     type="string"
                     />
                 <ErrorMessage name="state" />
-            <button type="submit">Sign Up</button>
+            <button type="submit">Submit</button>
         </Form>
     </Formik>
     );
