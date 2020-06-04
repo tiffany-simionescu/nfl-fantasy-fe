@@ -16,6 +16,7 @@ export default function AppRouter() {
             {/* <Route path="/search" component={Search} /> */}
             <Route exact path="/" component={ApiBE} />
             <Route path="/howtoguide" component={userGuide} />
+
             <Route path="/register" component={RegisterFormik} />
             <Route path="/login" component={LoginFormik} />
             <Route path="/api/fan/:id" component={Dashboard} />
