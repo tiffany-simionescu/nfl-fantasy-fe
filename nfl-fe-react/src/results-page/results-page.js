@@ -6,6 +6,11 @@ import { Form } from 'semantic-ui-react';
 import ResultsCard from './results-card.js';
 import styled from "styled-components"; 
 
+// import TextField from '@material-ui/core/TextField';
+// import Autocomplete from '@material-ui/lab/Autocomplete';
+// import PlayerList from '../components/PlayerList';
+import AutoCompleteBox2 from '../components/Autocomplete2';
+
 const initial_state = {
   player0_name: "",
   player1_name: "",
@@ -26,6 +31,7 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
     };
 
   const handleChange = event => {
+    event.preventDefault();
     setState({
       ...state, 
       [event.target.name]: event.target.value
@@ -67,20 +73,32 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
       <div>
         <Form onSubmit={handleSubmit}>
           <H3> Team 1 </H3>
-          <Form.Input 
+          {/* <Form.Input 
             type="text"
             name="player0_name"
             value={player0_name}
             onChange={handleChange}
             placeholder="1st player"
+          /> */}
+          <AutoCompleteBox2 
+            id="player0_name"
+            value={player0_name}
+            onChange={handleChange}
+            label="Player 1" 
           />
           <H3> Team 2 </H3>
-          <Form.Input 
+          {/* <Form.Input 
             type="text"
             name="player1_name"
             value={player1_name}
             onChange={handleChange}
             placeholder="2nd player"
+          /> */}
+         <AutoCompleteBox2 
+            id="player1_name"
+            value={player1_name}
+            onChange={handleChange}
+            label="Player 2" 
           />
           <H3> Week </H3>
           <Form.Input 
@@ -112,6 +130,3 @@ padding: 2rem;
 
 
 export default SearchPlayersStatForm;
-
-
-
