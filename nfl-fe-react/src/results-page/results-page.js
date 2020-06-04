@@ -6,10 +6,13 @@ import { Form } from 'semantic-ui-react';
 import ResultsCard from './results-card.js';
 import styled from "styled-components"; 
 
+import DropDownForms from '../components/DropDownForms';
+
 // import TextField from '@material-ui/core/TextField';
 // import Autocomplete from '@material-ui/lab/Autocomplete';
 // import PlayerList from '../components/PlayerList';
 import AutoCompleteBox2 from '../components/Autocomplete2';
+import PlayerList from '../components/PlayerList.js';
 
 const initial_state = {
   player0_name: "",
@@ -29,6 +32,17 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
       setState({ ...state, searchResults });
       console.log(searchResults)
     };
+
+    // const handleSubmit = e => {
+    //   e.preventDefault();
+    //   axios.get(`https://nfl-perfect-trader.herokuapp.com/api/trade/?player0_id=${player0_name}&player1_id=${player1_name}&week=${week}`)
+    //     .then(res => {
+    //       console.log(res);
+    //     })
+    //     .catch(err => {
+    //       console.error(err);
+    //     })
+    // }
 
   const handleChange = event => {
     event.preventDefault();
@@ -81,8 +95,9 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
             placeholder="1st player"
           /> */}
           <AutoCompleteBox2 
-            id="player0_name"
+            name="Player 1"
             value={player0_name}
+            inputValue={player0_name}
             onChange={handleChange}
             label="Player 1" 
           />
@@ -95,11 +110,15 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
             placeholder="2nd player"
           /> */}
          <AutoCompleteBox2 
-            id="player1_name"
+            name="Player 2"
             value={player1_name}
+            inputValue={player1_name}
             onChange={handleChange}
             label="Player 2" 
           />
+          {/* <DropDownForms
+            value={player0_name, player1_name}
+          /> */}
           <H3> Week </H3>
           <Form.Input 
             type="number"

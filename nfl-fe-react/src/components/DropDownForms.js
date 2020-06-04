@@ -4,7 +4,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import PlayerList from "./PlayerList";
 
-function DropDownForms() {
+function DropDownForms(props) {
   const { register, handleSubmit, setValue } = useForm();
   //################################ This is for multiple Players ###################################
 
@@ -41,12 +41,13 @@ function DropDownForms() {
         <Autocomplete
           id="combo-box-demo"
           options={PlayerList}
-          getOptionLabel={(option: PlayerNames) => option.playerFull}
+          getOptionLabel={(option) => option.playerFull}
           style={{ width: 300 }}
           renderInput={(params) => (
             <TextField
               {...params}
-              name="single"
+              name="single1"
+              value={props.player0_name}
               label="Enter Players Name"
               variant="outlined"
               fullWidth
@@ -58,12 +59,13 @@ function DropDownForms() {
         <Autocomplete
           id="combo-box-demo"
           options={PlayerList}
-          getOptionLabel={(option: PlayerNames) => option.playerFull}
+          getOptionLabel={(option) => option.playerFull}
           style={{ width: 300 }}
           renderInput={(params) => (
             <TextField
               {...params}
-              name="single"
+              name="single2"
+              value={props.player1_name}
               label="Enter Players Name"
               variant="outlined"
               fullWidth
@@ -79,10 +81,10 @@ function DropDownForms() {
   );
 }
 
-interface PlayerNames {
-  playerFull: string;
-  playerID: string;
-}
+// interface PlayerNames {
+//   playerFull: string;
+//   playerID: string;
+// }
 export default DropDownForms;
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
