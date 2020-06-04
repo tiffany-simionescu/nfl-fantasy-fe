@@ -5,13 +5,13 @@ import axios from "axios";
 
 const RegisterFan = props => {
     const { values, errors, touched, status, setFieldValue } = props; 
-    const [fans, setFans] = useState([]);
+    const [fans, setFans] = useState({});
     const [errorMessage, setErrorMessage] = useState("");
 
 
     useEffect(() => {
         console.log("RegisterFan.js: status has changed!", status);
-        status && setFans([... fans, status]);
+        status && setFans([...fans, status]);
         if(status !== undefined) {
             props.history.push('/api/fans/:id');    //!!!! fan's dashboard with their id #. 
         }
@@ -25,23 +25,25 @@ const RegisterFan = props => {
             <div className="Register-Form">
                 <Form>
                     <h2> Sign Up to be a Member of TackleMyTrade.com </h2>
-                    <label htmlFor="name">
-                        Username
-                        <Field
-                        id="username"
-                        type="text"
-                        name="username"
-                        placeholder="username"
+                    <label>
+                    Username
+                    </label>
+                        <Field 
+                            id="username"
+                            value="username"
+                            name="username"
+                            type="text"
+                            placeholder="username"
                         />
                         {touched.username && errors.username && (
                             <p className="errors">{errors.username}</p>
                         )}
-                    </label>
 
-                    <label htmlFor="password">
+
+                    <label>
                         Password
                         <Field
-                        id="password"
+                        // id="password"
                         type="password"
                         name="password"
                         placeholder="password"
@@ -51,10 +53,10 @@ const RegisterFan = props => {
                         )}
                     </label>
 
-                    <label htmlFor="email">
+                    <label>
                         Email
                         <Field
-                        id="email"
+                        // id="email"
                         type="text"
                         name="email"
                         placeholder="Email"
@@ -64,10 +66,10 @@ const RegisterFan = props => {
                         )}
                     </label>
 
-                    <label htmlFor="firstname">
+                    <label>
                         First Name 
                         <Field
-                        id="firstname"
+                        // id="firstname"
                         type="string"
                         name="firstname"
                         placeholder="First Name"
@@ -77,10 +79,10 @@ const RegisterFan = props => {
                         )}
                     </label>
 
-                    <label htmlFor="lastname">
+                    <label>
                         Last Name
                         <Field
-                        id="lastname"
+                        // id="lastname"
                         type="string"
                         name="lastname"
                         placeholder="Last Name"
@@ -90,10 +92,10 @@ const RegisterFan = props => {
                         )}
                     </label>
 
-                    <label htmlFor="city">
+                    <label>
                         City
                         <Field 
-                        id="city"
+                        // id="city"
                         type="string"
                         name="city"
                         placeholder="City"
@@ -103,10 +105,10 @@ const RegisterFan = props => {
                         )}
                     </label>
 
-                    <label htmlFor="state">
+                    <label>
                         State
                         <Field
-                        id="state"
+                        // id="state"
                         type="string"
                         name="state"
                         placeholder="State Example TX"
@@ -116,7 +118,7 @@ const RegisterFan = props => {
                         )}
                     </label>
 
-                    <label htmlFor="profileImgURL">
+                    {/* <label htmlFor="profileImgURL">
                         Profile Image URL
                         <Field
                         id="profileImgURL"
@@ -127,7 +129,7 @@ const RegisterFan = props => {
                         {touched.desciption && errors. desciption && (
                             <p className="errors">{errors.profileImgURL}</p>
                         )}
-                    </label>
+                    </label> */}
                     <button type="submit"> Register </button>
                 </Form>
                 {errorMessage ? <h3>{errorMessage}</h3> : null}
@@ -146,24 +148,24 @@ const myMapPropsToValues = props => {
         lastname: props.lastname || "",
         city: props.city || "",
         state: props.state || "",
-        profileImgURL: props.profileImgURL || "",   // can always take out
-        props: props    // not sure what this does 
+        // profileImgURL: props.profileImgURL || "",   // can always take out
+        // props: props    // not sure what this does 
     };
 };
 
 const myHandleSubmit = (values, { setStatus, resetForm, setErrors }) => {
     console.log("RegisterFan.js: RegisterFan.js: POST RQ VALUES", values); 
     axios
-        .post("https://tacklemytrade-api.herokuapp.com/api/fans/register", values)  // should be good 
+        .post("http://localhost:5432/api/fans/register", values)  // should be good 
         .then(res => {
-            console.log("RegisterFan.js: POST RES", res.data, res.data.tokens);  // !!!!!
-            localStorage.setItem("token", res.data.token);  //!!!!!
-            setStatus(res.data.newFan); //!!!! newFan? 
+            console.log("RegisterFan.js: POST RES", res);  // !!!!!
+            // localStorage.setItem("token", res.data.token);  //!!!!!
+            setStatus(res); //!!!! newFan? 
             resetForm();
         })
         .catch(error => {
-            console.log("RegisterFan.js: Register Fan ERROR:", error.response.data.errorMessage);  
-            setErrors(error.response.data.errorMessage);
+            console.log("RegisterFan.js: Register Fan ERROR:", error.errorMessage);  
+            setErrors(error.errorMessage);
         });
 };
 
@@ -175,7 +177,7 @@ const yupSchema = Yup.object().shape({
     lastname: Yup.string().required("Required"),
     city: Yup.string().required("Required"),
     state: Yup.string().required("Required"),
-    profileImgUrl: Yup.string().required("Required")
+    // profileImgUrl: Yup.string().required("Required")
 });
 
 const formikObj = {

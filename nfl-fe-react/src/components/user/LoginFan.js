@@ -84,7 +84,7 @@ const FormikSignUp = withFormik({
     handleSubmit(values, {setStatus, resetForm, setErrors }){
         console.log("LoginFan.js: FormikSignUp submitting", values);
         axios
-            .post("https://tacklemytrade-api.herokuapp.com/api/fans/login", values) // !!!!!!!
+            .post("http://localhost:5432/api/fans/login", values) // !!!!!!!
             .then(res => {
                 console.log("LoginFan.js: Login Fan Sucess, RES:", res); //!!!!!
                 localStorage.setItem("token", res.data.token);  // !!!!!!
@@ -92,7 +92,7 @@ const FormikSignUp = withFormik({
                 resetForm(); 
             })
             .catch(error => {
-                console.log("LoginFan.js:", error.response.data.errorMessage);  //!!!!!!
+                console.log("LoginFan.js:", error.errorMessage);  //!!!!!!
             })
     }
 })(LoginFan); 
