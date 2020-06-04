@@ -5,7 +5,7 @@ import axios from "axios";
 
 const RegisterFan = props => {
     const { values, errors, touched, status, setFieldValue } = props; 
-    const [fans, setFans] = useState({});
+    const [fans, setFans] = useState();  //object 
     const [errorMessage, setErrorMessage] = useState("");
 
 
@@ -26,11 +26,10 @@ const RegisterFan = props => {
                 <Form>
                     <h2> Sign Up to be a Member of TackleMyTrade.com </h2>
                     <label>
-                    Username
-                    </label>
+                        Username
                         <Field 
                             id="username"
-                            value="username"
+                            value={values.username}
                             name="username"
                             type="text"
                             placeholder="username"
@@ -38,7 +37,7 @@ const RegisterFan = props => {
                         {touched.username && errors.username && (
                             <p className="errors">{errors.username}</p>
                         )}
-
+                    </label>
 
                     <label>
                         Password
@@ -94,7 +93,7 @@ const RegisterFan = props => {
 
                     <label>
                         City
-                        <Field 
+                        <Field
                         // id="city"
                         type="string"
                         name="city"
@@ -159,7 +158,6 @@ const myHandleSubmit = (values, { setStatus, resetForm, setErrors }) => {
         .post("http://localhost:5432/api/fans/register", values)  // should be good 
         .then(res => {
             console.log("RegisterFan.js: POST RES", res);  // !!!!!
-            // localStorage.setItem("token", res.data.token);  //!!!!!
             setStatus(res); //!!!! newFan? 
             resetForm();
         })
