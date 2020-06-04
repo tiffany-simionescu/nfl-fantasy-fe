@@ -18,7 +18,8 @@ const LoginFormik = () => {
             axios
             .post("https://tacklemytrade-api.herokuapp.com/api/fans/login", values)
             .then(res => {
-                console.log("LoginFormik.js: Post Res", res);
+                console.log("LoginFormik.js: Post Res", res.data);
+                localStorage.setItem("fan-token", res.data.token); 
             })
             .catch(error => {
                 console.log("LoginFormik.js: Login in Form Error", error);
