@@ -9,7 +9,7 @@ import RegisterFormik from "../components/user/RegisterFormik.js";
 import LoginFormik from "../components/user/LoginFormik.js"; 
 import Dashboard from "../components/user/Dashboard.js";  
 
-export default function AppRouter() {
+export default function AppRouter(props) {
     return (
         <Router>
             <Route exact path="/" component={ResultsPage} />
@@ -19,7 +19,7 @@ export default function AppRouter() {
 
             <Route path="/register" component={RegisterFormik} />
             <Route path="/login" component={LoginFormik} />
-            <Route path="/api/fan/:id" component={Dashboard} />
+            <Route path={`/dashboard`} component={Dashboard} />
         </Router>
     )
 }

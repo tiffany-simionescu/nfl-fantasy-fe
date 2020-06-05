@@ -1,19 +1,24 @@
-import React, { useState } from 'react';
-import { Redirect } from "react-router-dom"; 
+import React, { useState, useEffect } from 'react';
+import { withRouter } from "react-router-dom"; 
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from "axios";
 
-const LoginFormik = () => {
-    const [isLoggedIn, setisLoggedIn] = useState(false); 
+const LoginFormik = (props) => { 
 
-    const AuthPage =({ isLoggedIn }) => {
-        if (isLoggedIn === true ) {
-            return <Redirect to="/api/fans/:id" />;
-        } else {
-            return <h3> User is not Logged In!</h3>;
-        }
-    }; 
+    // const [ userId, setUserId] = useState([]); // getting all fans from database  
+
+    // useEffect (() => {
+    //     axios 
+    //     .get("https://tacklemytrade-api.herokuapp.com/api/fans") 
+    //     .then(res => {
+    //         setUserId(res.data);
+    //         console.log(res); 
+    //         })
+    //         .catch(err => {
+    //         console.error(err);
+    //         })
+    //     }, []); 
 
     return (
         <Formik
@@ -25,12 +30,13 @@ const LoginFormik = () => {
             username: Yup.string().required("Username is required"),
             password: Yup.string().required("Password is required")
         })}
-        onSubmit={(values, { setSubmitting}) => {
+        onSubmit={(values, { setSubmitting }) => {
             axios
             .post("https://tacklemytrade-api.herokuapp.com/api/fans/login", values)
             .then(res => {
                 console.log("LoginFormik.js: Post Res", res.data);
-                localStorage.setItem("fan-token", res.data.token); 
+                localStorage.setItem("fan-token", res.data.authToken);
+                props.history.push(`/dashboard`); 
             })
             .catch(error => {
                 console.log("LoginFormik.js: Login in Form Error", error);
@@ -51,8 +57,6 @@ const LoginFormik = () => {
                     />
                 <ErrorMessage name="password"/>
             <button 
-            // medium example 
-            onClick={AuthPage} 
             type="submit"> Login </button>            
         </Form>    
     </Formik>
