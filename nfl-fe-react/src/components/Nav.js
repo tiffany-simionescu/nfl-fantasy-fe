@@ -17,6 +17,7 @@ function Nav () {
         <Anchors>
           <Testanchor href="/register"> Register </Testanchor>
           <Testanchor href="/login"> Login </Testanchor>
+          {/* <Testanchor href='/api/fan/:id'> Dashboard </Testanchor> */}
         </Anchors>
     </NavSection> 
   )
