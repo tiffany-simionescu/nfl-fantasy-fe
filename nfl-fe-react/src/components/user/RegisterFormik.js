@@ -3,7 +3,7 @@ import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import axios from "axios"; 
 
-const RegisterFormik = () => {
+const RegisterFormik = (props) => {
     return (
         <Formik
             initialValues={{ username: '',
@@ -27,7 +27,9 @@ const RegisterFormik = () => {
                 axios
                 .post("https://tacklemytrade-api.herokuapp.com/api/fans/register", values)  // should be good 
                 .then(res => {
-                    console.log("RegisterFan.js: POST RES", res.data); 
+                    console.log("RegisterFan.js: POST RES", res.data);
+                    setSubmitting(true); 
+                    props.history.push(`/dashboard`);
                 })
                 .catch(error => {
                     console.log("RegisterFan.js: Register Fan ERROR:", error); 

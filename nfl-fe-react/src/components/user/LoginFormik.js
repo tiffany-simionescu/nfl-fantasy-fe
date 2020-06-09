@@ -31,12 +31,14 @@ const LoginFormik = (props) => {
             password: Yup.string().required("Password is required")
         })}
         onSubmit={(values, { setSubmitting }) => {
+            // e.preventDefault();
             axios
             .post("https://tacklemytrade-api.herokuapp.com/api/fans/login", values)
             .then(res => {
                 console.log("LoginFormik.js: Post Res", res.data);
                 localStorage.setItem("fan-token", res.data.authToken);
                 props.history.push(`/dashboard`); 
+                // setSubmitting(true); 
             })
             .catch(error => {
                 console.log("LoginFormik.js: Login in Form Error", error);
