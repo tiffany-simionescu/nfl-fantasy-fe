@@ -19,7 +19,7 @@ export default function AppRouter() {
 
             <Route path="/register" component={RegisterFormik} />
             <Route path="/login" component={LoginFormik} />
-            <Route path="/dashboard/:fan_id" component={Dashboard} />
+            <Route path="/dashboard" component={Dashboard} />
         </Router>
     )
 }

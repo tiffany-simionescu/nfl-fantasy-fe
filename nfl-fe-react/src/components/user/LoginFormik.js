@@ -38,6 +38,7 @@ const LoginFormik = (props) => {
                 console.log("LoginFormik.js: Post Res", res.data);
                 localStorage.setItem("fan-token", res.data.authToken);
                 props.history.push(`/dashboard`); 
+                // setSubmitting(true); 
             })
             .catch(error => {
                 console.log("LoginFormik.js: Login in Form Error", error);
