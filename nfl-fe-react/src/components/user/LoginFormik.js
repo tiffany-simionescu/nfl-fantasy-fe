@@ -31,6 +31,7 @@ const LoginFormik = (props) => {
             password: Yup.string().required("Password is required")
         })}
         onSubmit={(values, { setSubmitting }) => {
+            // e.preventDefault();
             axios
             .post("https://tacklemytrade-api.herokuapp.com/api/fans/login", values)
             .then(res => {

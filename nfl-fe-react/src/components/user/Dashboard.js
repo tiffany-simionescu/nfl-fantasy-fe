@@ -1,13 +1,22 @@
 import React, {useState, useEffect} from "react";
 import axios from 'axios'; 
+import DashboardCard from "./DashboardCard.js"; 
 
-const Dashboard = (props) => {
+const Dashboard = () => {
 
-    const [ userId, setUserId] = useState([]); // getting all fans from database  
+    // const [ userId, setUserId] = useState({
+    //     fan_id: ""
+    // }); // getting all fans from database  
+
+    const [ userId, setUserId] = useState([]);
+
+    const fansUrl = ("https://tacklemytrade-api.herokuapp.com/api/fans"); 
+
+// ${userId.fan_id}`
 
     useEffect (() => {
         axios 
-        .get("https://tacklemytrade-api.herokuapp.com/api/fans") 
+        .get(fansUrl) 
         .then(res => {
             setUserId(res.data);
             console.log(res); 
@@ -17,15 +26,13 @@ const Dashboard = (props) => {
             })
         }, []);  
 
+        userId.map(userId => console.log(userId))
+
     return (
         <div className="Fan-Dashboard">
-            <h3> Fan's dashboard</h3>
-            {localStorage.getItem('fan-token')  ?
-            (<p>Hello {props.first_name}!</p> 
-            ) : (
-            <h4>Loading...</h4>
-            )
-            }
+            {userId.map((fan, index) => (
+                <DashboardCard key={index} fan={fan} />
+            ))}
         </div>
     )
 }
