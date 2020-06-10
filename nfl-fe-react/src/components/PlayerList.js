@@ -1,4 +1,4 @@
-const PlayerList = [
+export const PlayerList = [
   {
     playerFull: "Jake Kumerow",
     playerID: "JK-2250",
@@ -2460,4 +2460,4 @@ const PlayerList = [
     playerID: "RG-1850",
   },
 ];
-export default PlayerList;
+
