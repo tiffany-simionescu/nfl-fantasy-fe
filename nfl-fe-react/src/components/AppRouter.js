@@ -7,7 +7,8 @@ import ApiBE from "../actions/ApiBE.js";
 import userGuide from "./userGuide.js"; 
 import RegisterFormik from "../components/user/RegisterFormik.js"; 
 import LoginFormik from "../components/user/LoginFormik.js"; 
-import Dashboard from "../components/user/Dashboard.js";  
+import Dashboard from "../components/user/Dashboard.js"; 
+import PrivateRoute from "../hooks/PrivateRoute.js"; 
 
 export default function AppRouter() {
     return (
@@ -19,7 +20,7 @@ export default function AppRouter() {
 
             <Route path="/register" component={RegisterFormik} />
             <Route path="/login" component={LoginFormik} />
-            <Route path="/dashboard" component={Dashboard} />
+            <PrivateRoute path="/dashboard" component={Dashboard} />
         </Router>
     )
 }
