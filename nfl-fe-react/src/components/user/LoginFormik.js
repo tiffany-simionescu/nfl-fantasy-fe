@@ -5,75 +5,67 @@ import axios from "axios";
 import { AxiosWithAuth } from '../../hooks/AxiosWithAuth';
 
 const LoginFormik = (props) => {
-    const [ credentials, setCredentials] = useState({});
-
-
-    // const handleChange = event => {
-    //     setCredentials: {
-    //         ...credentials: {
-    //             [event.target.name]:event.target.value,
-            
-    //         }
-    // }
-
+    // const [ credentials, setCredentials] = useState({});
 
     return (
+        <div className="Login-Area">
+            <h3> Login </h3>
         <Formik
             initialValues={{
                 username: '',
                 password: ''
             }}
         validationSchema={Yup.object({
-            username: Yup.string().required("Username is required"),
-            password: Yup.string().required("Password is required")
+            username: Yup.string()
+            .min(6, 'Too Short!')
+            .max(65, 'Too Long!')
+            .required("Username is required!"),
+            password: Yup.string()
+            .min(6, 'Too Short!')
+            .max(65, 'Too Long!')
+            .required("Password is required!")
         })}
-        onSubmit={(values, credentials) => {
-            // e.preventDefault();
+        onSubmit={(values, {isSubmitting }) => {
             AxiosWithAuth()
-            .post("/fans/login", values, credentials)
+            // axios // this throws a 404, not sure why. 
+            .post("/fans/login", values)
             .then(res => {
-                console.log("LoginFormik.js: Post Res", res.data);
+                console.log("LoginFormik.js: Post Res", res);
                 localStorage.setItem("fan-token", res.data.authToken);
-                // props.history.push(`/dashboard/${props.fan_id}`);  // hardcode doesn't work but shows the correct data from the api in inspect 
-                // setCredentials({...credentials, [e.target.name]: e.target.value})
+                console.log("Token", res.data.authToken); 
                 props.history.push(`/dashboard`); 
-                // setSubmitting(true); 
+                isSubmitting(false); 
         })
             .catch(error => {
                 console.log("LoginFormik.js: Login in Form Error", error);
             });
         }}
-        handChange={(event) => {
-            setCredentials: {
-                ...credentials: {
-                    [event.target.name]:event.target.value,
-                
-                }
-        }
-
-        }}
         >
+
         <Form 
-        // onSubmit={this.login}
+        // formik does this for us  ***
+        // onSubmit={props.handleSubmit}*
         >
             <label htmlFor="username">Username</label>
                 <Field
                     name="username"
                     type="text"
-                    onChange={this.handleChange}
+                    placeholder="username"
+                    // onChange={props.handleChange}*
                     />
                 <ErrorMessage name="username"/>
             <label htmlFor="password">Password</label>
                 <Field 
                     name="password"
                     type="password"
-                    onChange={this.handleChange}
+                    placeholder="password"
+                    // onChange={props.handleChange}*
                     />
                 <ErrorMessage name="password"/>
-            <button 
-            type="submit"> Login </button>            
-        </Form>    
+            <button type="submit"> Login </button>            
+        </Form>   
     </Formik>
+    </div>
     );
 };
 
