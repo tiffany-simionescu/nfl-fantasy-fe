@@ -23,12 +23,12 @@ const RegisterFormik = (props) => {
                 city: Yup.string().required("Required"),
                 state: Yup.string().required("Required"),
             })}
-            onSubmit={(values, { setSubmitting }) => {
+            onSubmit={(values, { isSubmitting }) => {
                 axios
                 .post("https://tacklemytrade-api.herokuapp.com/api/fans/register", values)  // should be good 
                 .then(res => {
                     console.log("RegisterFan.js: POST RES", res.data);
-                    setSubmitting(true); 
+                    isSubmitting( false); 
                     props.history.push(`/dashboard`);
                 })
                 .catch(error => {

@@ -1,13 +1,13 @@
 import axios from "axios";
 
 export const AxiosWithAuth = () => {
-    const token = localStorage.getItem("fan-token");
-    console.log("AxiosWithAuthUser.js: grabbed token:", token);
+    const authToken = localStorage.getItem("fan-token");
+    console.log("AxiosWithAuthUser.js: grabbed token:", authToken);
 
     return axios.create({
     baseURL: "https://tacklemytrade-api.herokuapp.com/api",
     headers: {
-        Authorization: token
+        authToken: authToken
         }
     });
 };
