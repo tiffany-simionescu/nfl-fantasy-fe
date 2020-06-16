@@ -126,3 +126,88 @@ ul.options li.option-active {
 .no-options {
   color: white;
 }
+
+/* Register Form */
+.register-box {
+  width: 500px;
+  margin: auto;
+  padding: 20px 40px;
+  transform: translate(1%, 0%);
+  background: rgba(0, 0, 0, 0.65);
+  box-sizing: border-box;
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
+
+.register-box h1 {
+  margin: 10px 0 20px;
+  padding: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.register-button {
+  margin-top: 0;
+}
+
+.fan-box {
+  position: relative;
+}
+
+.fan-box input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 30px;
+  border: none;
+  border-bottom: 1px solid #fff;
+  outline: none;
+  background: transparent;
+}
+
+.fan-box label {
+  position: absolute;
+  top:0;
+  left: 0;
+  padding: 8px 0;
+  font-size: 16px;
+  color: #fff;
+  pointer-events: none;
+  transition: .5s;
+}
+
+.fan-box input:focus ~ label {
+  left: 0;
+  color: #ffa630;
+  font-size: 16px;
+}
+
+.fan-box input:not(:placeholder-shown) ~ label {
+  transform: translate(10%, -75%) scale(.9);
+  color: #ffa630;
+}
+
+.register-button {
+	box-shadow: 0px 1px 0px 0px #fff6af;
+	background: linear-gradient(to bottom, #ffec64 5%, #ffa630 100%);
+	background-color:#ffec64;
+	border-radius: 6px;
+	border: 1px solid #ffa630;
+	display: inline-block;
+	cursor: pointer;
+	color:#333333;
+	font-size: 16px;
+	font-weight: bold;
+	padding: 6px 24px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #ffee66;
+}
+.register-button:hover {
+	background: linear-gradient(to bottom, #ffa630 5%, #ffec64 100%);
+	background-color:#ffa630;
+}
+.register-button:active {
+	position: relative;
+	top: 1px;
+}
