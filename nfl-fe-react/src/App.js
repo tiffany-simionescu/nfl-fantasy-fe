@@ -7,6 +7,9 @@ import Footer from "./components/Footer.js";
 import Nav from "./components/Nav.js";
 import styled from "styled-components"; 
 
+// import AutocompleteBox1 from './components/Autocomplete1';
+// import AutocompleteBox2 from './components/Autocomplete2';
+
 
 // Google Analytics for the whole app
     ReactGA.initialize('UA-145773395-3');
@@ -28,6 +31,10 @@ function App() {
 
             <MainDiv className="Main-Area">
             <h2> Fantasy Football Trade Analyzer </h2>
+{/*             
+            <AutocompleteBox1 />
+            <AutocompleteBox2 /> */}
+
             <AppRouter/>
             </MainDiv>
 

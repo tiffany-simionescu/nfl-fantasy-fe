@@ -14,6 +14,11 @@ function Nav () {
           <Testanchor href="#"> About Us</Testanchor>
           <Testanchor href="/howtoguide" > How To Play </Testanchor>
         </Anchors> 
+        <Anchors>
+          <Testanchor href="/register"> Register </Testanchor>
+          <Testanchor href="/login"> Login </Testanchor>
+          {/* <Testanchor href='/api/fan/:id'> Dashboard </Testanchor> */}
+        </Anchors>
     </NavSection> 
   )
 }
