@@ -27,11 +27,11 @@ const RegisterForm = props => {
     };
 
     return (
-        <div>
+        <div className="register-box">
             <h1>Register</h1>
             <form onSubmit={handleSubmit}>
 
-                <div className="register-box">
+                <div className="fan-box">
                     <input 
                         type="text"
                         placeholder="First Name"
@@ -42,7 +42,7 @@ const RegisterForm = props => {
                     <label>First Name</label>
                 </div>
 
-                <div className="register-box">
+                <div className="fan-box">
                     <input 
                         type="text"
                         placeholder="Last Name"
@@ -53,7 +53,7 @@ const RegisterForm = props => {
                     <label>Last Name</label>
                 </div>
 
-                <div className="register-box">
+                <div className="fan-box">
                     <input 
                         type="text"
                         placeholder="City"
@@ -64,7 +64,7 @@ const RegisterForm = props => {
                     <label>City</label>
                 </div>
 
-                <div className="register-box">
+                <div className="fan-box">
                     <input 
                         type="text"
                         placeholder="State"
@@ -75,7 +75,7 @@ const RegisterForm = props => {
                     <label>State</label>
                 </div>
 
-                <div className="register-box">
+                <div className="fan-box">
                     <input 
                         type="email"
                         placeholder="Email"
@@ -86,7 +86,7 @@ const RegisterForm = props => {
                     <label>Email</label>
                 </div>
 
-                <div className="register-box">
+                <div className="fan-box">
                     <input 
                         type="text"
                         placeholder="Username"
@@ -97,7 +97,7 @@ const RegisterForm = props => {
                     <label>Username</label>
                 </div>
 
-                <div className="register-box">
+                <div className="fan-box">
                     <input 
                         type="password"
                         placeholder="Password"
