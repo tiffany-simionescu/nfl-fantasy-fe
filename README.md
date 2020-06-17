@@ -20,7 +20,6 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Maintainability](https://api.codeclimate.com/v1/badges/92a8bccfc4cbed259b32/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/nfl-fantasy-fe/maintainability)
-🚫 more info on using badges [here](https://github.com/badges/shields)
 
 Project Overview
 
@@ -35,70 +34,44 @@ Tackle My Trade NFL Fantasy Football Trade Anaylzer is to help a fan to build th
 
 ### 4️⃣ Key Features
 
--    feature one
--    feature two
--    feature three
--    feature four
--    feature five
+-    Fan can pick two NFL football players to anaylzer to see who would score more points per week.
+-    Fan can pick 17 different weeks to see if a player is better than other player. 
+-    Fan can register/login to have a personal dashboard. 
 
-## 1️⃣ Tech Stack
+ 1️⃣ Tech Stack
 
-### Front end built using:
+ Front end built using:
+-   React
+-   Material-ui
+-   Styled-Components 
+-   Redux 
+-   Heroku 
+-   React-Router-Dom 
 
-#### _Front end framework goes here_
+#### Front end deployed to Heroku 
 
-🚫 Why did you choose this framework?
-
--    point one
--    point two
--    point three
--    point four
-
-🚫List the rest of the front end features and libraries in the same format as the framework above.
-
-#### Front end deployed to `🚫insert service here`
-
-#### [Back end](🚫link to back end repo here) built using:
+#### [Back end](https://github.com/Lambda-School-Labs/nfl-fantasy-be) built using:
 
 #### 🚫 back end framework goes here
 
--    point one
--    point two
--    point three
-
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
+-    Postgres
+-    Heroku
+-    Express
+-    Cors
+-    Knex
+-    Nodemon
+-    Jsonwebtoken
 
 # APIs
 
-## 2️⃣ Authentication API here
+## 2️⃣ Authentication API https://tacklemytrade-api.herokuapp.com/api/
 
-🚫Replace text below with a description of the API
+Base api url for the backend. 
 
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
+## 3️⃣ Data Science API https://nfl-trade.herokuapp.com - under the Methodology Tab
 
-## 2️⃣ Payment API here
+The datascience api that hooks to the backend. This is where all 621 players stats are. 
 
-🚫Replace text below with a description of the API
-
-This is the way you take out your flustrations. Get away from those little Christmas tree things we used to make in school. Isn't it fantastic that you can change your mind and create all these happy things? Everything's not great in life, but we can still find beauty in it.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-When you do it your way you can go anywhere you choose. Let your heart take you to wherever you want to be. If I paint something, I don't want to have to explain what it is. A tree needs to be your friend if you're going to paint him. That's a son of a gun of a cloud. Even the worst thing we can do here is good.
-
-## 3️⃣ Misc API here
-
-🚫Replace text below with a description of the API
-
-Volunteering your time; it pays you and your whole community fantastic dividends. Maybe there's a happy little waterfall happening over here. You can spend all day playing with mountains. We don't have to be committed. We are just playing here. You have freedom here. The only guide is your heart. It's cold, but it's beautiful.
 
 # 3️⃣ Environment Variables
 
@@ -132,7 +105,7 @@ In order for the app to function correctly, the user must set up their own envir
 
 # 4️⃣ Installation Instructions
 
-🚫explain how to install the required dependencies to get this project up and running with yarn and NPM
+NPM install 
 
 ## Other Scripts
 
