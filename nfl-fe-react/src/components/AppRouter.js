@@ -20,7 +20,10 @@ export default function AppRouter() {
 
             <Route path="/register" component={RegisterForm} />
             <Route path="/login" component={LoginFormik} />
-            <PrivateRoute path="/dashboard" component={Dashboard} />
+            
+            {/* Change back to PrivateRoute after testing */}
+            {/* <PrivateRoute path="/dashboard" component={Dashboard} /> */}
+            <Route path="/dashboard" component={Dashboard} />
         </Router>
     )
 }

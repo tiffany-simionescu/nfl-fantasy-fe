@@ -211,3 +211,32 @@ ul.options li.option-active {
 	position: relative;
 	top: 1px;
 }
+
+/* Dashboard Card */
+.dashboard-card {
+  background: linear-gradient(#ffa630, #ffec64);
+  width: 400px;
+  margin: 30px auto;
+  padding: 20px 0;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px black;
+}
+
+.dashboard-card-text {
+  display: flex;
+  margin-top: 10px;
+}
+
+.dashboard-text-left {
+  margin-left: 25%;
+}
+
+.dashboard-text-right {
+  text-align: left;
+  margin-left: 10px;
+}
+
+.dashboard-card img {
+  width: 200px;
+  border-radius: 50%;
+}
