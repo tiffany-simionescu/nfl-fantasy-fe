@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { registerFan } from '../../actions/register-action';
+import { registerFan } from '../../actions/fan-actions';
 
 const RegisterForm = props => {
     const [fan, setFan] = useState({

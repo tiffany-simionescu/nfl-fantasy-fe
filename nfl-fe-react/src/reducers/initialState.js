@@ -15,3 +15,5 @@ const initialState = {
   isSubmitting: false,
   isLoggedIn: false
 }
+
+export default initialState;
