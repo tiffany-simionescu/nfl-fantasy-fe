@@ -16,10 +16,10 @@ const DashboardCard = (props) => {
                                 <h3>Email:</h3>
                             </div>
                             <div className="dashboard-text-right">
-                                <h3>{props.users.first_name} {props.users.last_name}</h3>
-                                <h3>{props.users.city}</h3>
-                                <h3>{props.users.state}</h3>
-                                <h3>{props.users.email}</h3>
+                                <h3>{props.fan.first_name} {props.fan.last_name}</h3>
+                                <h3>{props.fan.city}</h3>
+                                <h3>{props.fan.state}</h3>
+                                <h3>{props.fan.email}</h3>
                             </div>
                         </div>
                     </div>
