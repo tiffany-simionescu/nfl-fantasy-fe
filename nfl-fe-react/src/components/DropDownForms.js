@@ -2,7 +2,7 @@ import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import React from "react";
 import { useForm } from "react-hook-form";
-import PlayerList from "./PlayerList";
+import {PlayerList} from "./PlayerList";
 
 function DropDownForms(props) {
   const { register, handleSubmit, setValue } = useForm();
