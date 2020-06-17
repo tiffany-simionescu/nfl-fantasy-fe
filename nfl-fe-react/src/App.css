@@ -127,7 +127,9 @@ ul.options li.option-active {
   color: white;
 }
 
+/* Login Form */
 /* Register Form */
+.login-box,
 .register-box {
   width: 500px;
   margin: auto;
@@ -139,6 +141,7 @@ ul.options li.option-active {
   border-radius: 10px;
 }
 
+.login-box h1,
 .register-box h1 {
   margin: 10px 0 20px;
   padding: 0;
@@ -146,6 +149,7 @@ ul.options li.option-active {
   text-align: center;
 }
 
+.login-button,
 .register-button {
   margin-top: 0;
 }
@@ -188,6 +192,7 @@ ul.options li.option-active {
   color: #ffa630;
 }
 
+.login-button,
 .register-button {
 	box-shadow: 0px 1px 0px 0px #fff6af;
 	background: linear-gradient(to bottom, #ffec64 5%, #ffa630 100%);
@@ -203,13 +208,37 @@ ul.options li.option-active {
 	text-decoration: none;
 	text-shadow: 0px 1px 0px #ffee66;
 }
+
+.login-button:hover,
 .register-button:hover {
 	background: linear-gradient(to bottom, #ffa630 5%, #ffec64 100%);
 	background-color:#ffa630;
 }
+
+.login-button:active,
 .register-button:active {
 	position: relative;
 	top: 1px;
+}
+
+.no-account,
+.have-account {
+  margin-top: 15px;
+  color: #fff;
+  font-size: 14px;
+}
+
+.no-account-link,
+.have-account-link {
+  margin-left: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  color: #03e9f4;
+}
+
+.no-account-link:hover,
+.have-account-link:hover {
+  color: rgb(250, 193, 140);
 }
 
 /* Dashboard Card */
