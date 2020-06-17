@@ -1,7 +1,7 @@
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
-import PlayerList from './PlayerList';
+import {PlayerList} from './PlayerList';
 
 function AutoCompleteBox2(props) {
   return (
@@ -20,6 +20,7 @@ function AutoCompleteBox2(props) {
         name={props.name}
         value={props.value}
         inputValue={props.inputValue} 
+        onChange={props.onChange}
         label={props.label} 
         variant="outlined" />}
     />

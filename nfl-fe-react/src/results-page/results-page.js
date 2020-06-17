@@ -6,13 +6,11 @@ import { Form } from 'semantic-ui-react';
 import ResultsCard from './results-card.js';
 import styled from "styled-components"; 
 
-import DropDownForms from '../components/DropDownForms';
-
 // import TextField from '@material-ui/core/TextField';
 // import Autocomplete from '@material-ui/lab/Autocomplete';
 // import PlayerList from '../components/PlayerList';
 import AutoCompleteBox2 from '../components/Autocomplete2';
-import PlayerList from '../components/PlayerList.js';
+
 
 const initial_state = {
   player0_name: "",
@@ -75,7 +73,8 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
         playersname={result.name}
         position={result.position}
         rankPrediction={result.rankPred}
-        week_1={result.weekPred}
+        weekActual={result.weekAct}
+        weekPredict={result.weekPred}
         isWinner={result.winner}
       />
     </div>
@@ -123,7 +122,7 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
           <Form.Input 
             type="number"
             name="week"
-            value={week}
+            inputValue={week}
             onChange={handleChange}
             placeholder="week number"
           />
