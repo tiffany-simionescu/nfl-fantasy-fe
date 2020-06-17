@@ -13,6 +13,7 @@ function Nav () {
           <Testanchor href="/"> Home </Testanchor>
           <Testanchor href="#"> About Us</Testanchor>
           <Testanchor href="/howtoguide" > How To Play </Testanchor>
+          <Testanchor href="/analytics"> Analytics </Testanchor>
         </Anchors> 
         <Anchors>
           <Testanchor href="/register"> Register </Testanchor>

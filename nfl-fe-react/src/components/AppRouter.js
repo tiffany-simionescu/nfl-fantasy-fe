@@ -8,6 +8,7 @@ import RegisterForm from "../components/user/RegisterForm.js";
 import LoginForm from "../components/user/LoginForm.js"; 
 import Dashboard from "../components/user/Dashboard.js"; 
 import PrivateRoute from "../hooks/PrivateRoute.js"; 
+import AnalyticsPage from "../components/AnalyticsPage.js"; 
 
 export default function AppRouter() {
     return (
@@ -15,7 +16,7 @@ export default function AppRouter() {
             <Route exact path="/" component={ResultsPage} />
             <Route exact path="/" component={ApiBE} />
             <Route path="/howtoguide" component={userGuide} />
-
+            <Route path="/analytics" component={AnalyticsPage} />
             <Route path="/register" component={RegisterForm} />
             <Route path="/login" component={LoginForm} />
             

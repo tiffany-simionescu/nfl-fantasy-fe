@@ -40,7 +40,7 @@ function App() {
 
             <div className="Foot-Area">
             </div>
-                <Footer />
+                {/* <Footer /> */}
             </div>
     );
 };
@@ -52,5 +52,5 @@ const MainDiv = styled.div`
 width: 85%;
 height: 55rem; 
 margin: 0 auto; 
-padding: 3rem; 
+padding: 5rem; 
 `
