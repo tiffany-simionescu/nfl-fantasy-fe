@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { registerFan } from '../../actions/fan-actions';
+import { Link } from 'react-router-dom';
 
 const RegisterForm = props => {
     const [fan, setFan] = useState({
@@ -110,6 +111,10 @@ const RegisterForm = props => {
 
                 <button className="register-button">Register</button>
             </form>
+
+            <p className="no-account">Have an Account?
+                <Link to="/login" className="no-account-link">Sign In</Link>
+            </p>
         </div>
     )
 }
