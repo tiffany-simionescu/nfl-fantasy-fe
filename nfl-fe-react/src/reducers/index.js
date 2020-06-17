@@ -2,8 +2,10 @@ import initialState from './initialState';
 import {
   POST_INITIALIZE, 
   ADD_FAN_SUCCESS,
-  ADD_FAN_FAILURE
-} from '../actions/register-action';
+  ADD_FAN_FAILURE,
+  LOGIN_SUCCESS,
+  LOGOUT
+} from '../actions/fan-actions';
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
@@ -37,6 +39,19 @@ const reducer = (state = initialState, action) => {
         ...state,
         error: action.payload,
         isSubmitting: false
+      };
+
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        fan: action.payload,
+        isLoggedIn: true
+      };
+
+    case LOGOUT:
+      return {
+        ...state,
+        isLoggedIn: false
       };
 
     default:
