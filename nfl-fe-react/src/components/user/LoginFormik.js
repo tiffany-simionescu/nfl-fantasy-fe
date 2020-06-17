@@ -9,7 +9,7 @@ const LoginFormik = (props) => {
 
     return (
         <div className="Login-Area">
-            <h3> Login </h3>
+            <h3> Login </h3> 
         <Formik
             initialValues={{
                 username: '',
