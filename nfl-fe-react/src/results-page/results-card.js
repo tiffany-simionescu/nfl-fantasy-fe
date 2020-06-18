@@ -2,7 +2,7 @@ import React from "react";
 import {Card} from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
-export default function ResultsCard({playersname, position, rankPrediction, weekPredict, weekActual, isWinner}) {
+export default function ResultsCard({playersname, position, rankPrediction, weekPredict, weekActual, isWinner, weekNum}) {
     return (
         <div class="ui cc_cursor centered card">
             <Card>
@@ -14,10 +14,10 @@ export default function ResultsCard({playersname, position, rankPrediction, week
                         position: {position}
                     </Card.Meta>
                     <Card.Content>
-                        week actual: {weekActual}
+                        week {weekNum} actual: {weekActual}
                     </Card.Content>
                     <Card.Content>
-                        week predict: {weekPredict}
+                        week {weekNum} predict: {weekPredict}
                     </Card.Content>
                     <Card.Content>
                         rank prediction: {rankPrediction}

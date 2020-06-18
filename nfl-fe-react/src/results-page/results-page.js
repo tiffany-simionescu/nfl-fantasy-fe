@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import { Form } from 'semantic-ui-react';
@@ -25,31 +25,25 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
     const handleSubmit = async event => {
       event.preventDefault();
       const { player0_name, player1_name, week} = state;
+      console.log(state)
       onFormSubmit(state);
       const searchResults = await searchNflPLayers({ player0_name, player1_name, week });
       setState({ ...state, searchResults });
       console.log(searchResults)
     };
 
-    // const handleSubmit = e => {
-    //   e.preventDefault();
-    //   axios.get(`https://nfl-perfect-trader.herokuapp.com/api/trade/?player0_id=${player0_name}&player1_id=${player1_name}&week=${week}`)
-    //     .then(res => {
-    //       console.log(res);
-    //     })
-    //     .catch(err => {
-    //       console.error(err);
-    //     })
-    // }
-
-  const handleChange = event => {
+  const handleChange = (event, values) => {
     event.preventDefault();
     setState({
       ...state, 
-      [event.target.name]: event.target.value
+      [event.target.name]: event.target.value, 
+      player0_name: values.playerFull,
+      player1_name: values.playerFull
     });
     console.log(event.target.value);
+    console.log(values.playerFull);
   };
+
 
   const searchNflPLayers = async ({ player0_name, player1_name, week }) => {
     try {
@@ -76,10 +70,12 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
         weekActual={result.weekAct}
         weekPredict={result.weekPred}
         isWinner={result.winner}
+        weekNum={week}
       />
     </div>
     )
   });
+
   
   return(
     <React.Fragment>
@@ -93,8 +89,10 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
             onChange={handleChange}
             placeholder="1st player"
           /> */}
+
           <AutoCompleteBox2 
-            name="Player 1"
+            type="text"
+            name={player0_name}
             value={player0_name}
             inputValue={player0_name}
             onChange={handleChange}
@@ -108,21 +106,21 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
             onChange={handleChange}
             placeholder="2nd player"
           /> */}
+
          <AutoCompleteBox2 
-            name="Player 2"
+            type="text"
+            name={player1_name}
             value={player1_name}
             inputValue={player1_name}
             onChange={handleChange}
             label="Player 2" 
           />
-          {/* <DropDownForms
-            value={player0_name, player1_name}
-          /> */}
+
           <H3> Week </H3>
           <Form.Input 
             type="number"
             name="week"
-            inputValue={week}
+            value={week}
             onChange={handleChange}
             placeholder="week number"
           />
