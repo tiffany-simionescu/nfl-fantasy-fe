@@ -1,13 +1,10 @@
 import initialState from './initialState';
 import {
   POST_INITIALIZE, 
-  FETCH_INITIALIZE,
   ADD_FAN_SUCCESS,
   ADD_FAN_FAILURE,
   LOGIN_SUCCESS,
-  LOGOUT,
-  FETCH_FAN_SUCCESS,
-  FETCH_FAN_FAILURE
+  LOGOUT
 } from '../actions/fan-actions';
 
 const reducer = (state = initialState, action) => {
@@ -18,13 +15,6 @@ const reducer = (state = initialState, action) => {
         isFetching: true,
         error: ''
       };
-
-    case FETCH_INITIALIZE: 
-    return {
-      ...state,
-      isFetching: true,
-      error: ""
-    };
 
     case ADD_FAN_SUCCESS:
       return {
@@ -62,21 +52,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         isLoggedIn: false
-      };
-
-    case FETCH_FAN_SUCCESS:
-      return {
-        ...state,
-        isFetching: false,
-        error: "",
-        fan: action.payload
-      };
-
-    case FETCH_FAN_FAILURE:
-      return {
-        ...state,
-        error: action.payload,
-        isFetching: false
       };
 
     default:
