@@ -48,8 +48,9 @@ export const login = (fan, props) => dispatch => {
     .then(res => {
       dispatch({
         type: LOGIN_SUCCESS,
-        payload: res.data.fan
+        payload: res
       });
+      console.log(res.data);
       localStorage.setItem("fan-token", res.data.authToken);
       props.history.push('/dashboard');
     })
