@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from "styled-components"; 
 import tacklemytradelogo from "../styling/images/tacklemytradelogo.jpg"; 
+import { connect } from 'react-redux';
+import { logout } from '../actions/fan-actions';
 
 
-function Nav () {
+function Nav (props) {
   return (
     <NavSection className="nav">
       <div className="Logo-Area"> 
@@ -16,15 +18,33 @@ function Nav () {
           <Testanchor href="/analytics"> Analytics </Testanchor>
         </Anchors> 
         <Anchors>
+
+          {props.isLoggedIn ? (
+            <Testanchor href="/dashboard"> Dashboard </Testanchor>
+          ) : (
+            null
+          )}
+
           <Testanchor href="/register"> Register </Testanchor>
-          <Testanchor href="/login"> Login </Testanchor>
-          {/* <Testanchor href='/api/fan/:id'> Dashboard </Testanchor> */}
+
+          {props.isLoggedIn ? (
+            <Testanchor href="/" onClick={props.logout}> Logout </Testanchor>
+          ) : (
+            <Testanchor href="/login"> Login </Testanchor>
+          )}
         </Anchors>
     </NavSection> 
   )
 }
 
-export default Nav;
+// export default Nav;
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.isLoggedIn
+  }
+}
+
+export default connect(mapStateToProps, { logout })(Nav);
 
 const NavSection = styled.div`
 display: inline-flex; 
