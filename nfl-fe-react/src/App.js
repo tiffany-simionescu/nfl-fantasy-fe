@@ -30,7 +30,6 @@ function App() {
             </div>
 
             <MainDiv className="Main-Area">
-            <h2> Fantasy Football Trade Analyzer </h2>
 {/*             
             <AutocompleteBox1 />
             <AutocompleteBox2 /> */}
