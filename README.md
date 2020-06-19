@@ -38,7 +38,7 @@ Tackle My Trade NFL Fantasy Football Trade Anaylzer is to help a fan to build th
 -    Fan can pick 17 different weeks to see if a player is better than other player. 
 -    Fan can register/login to have a personal dashboard. 
 
- 1️⃣ Tech Stack
+ ### 1️⃣ Tech Stack
 
  Front end built using:
 -   React
@@ -51,8 +51,6 @@ Tackle My Trade NFL Fantasy Football Trade Anaylzer is to help a fan to build th
 #### Front end deployed to Heroku 
 
 #### [Back end](https://github.com/Lambda-School-Labs/nfl-fantasy-be) built using:
-
-#### 🚫 back end framework goes here
 
 -    Postgres
 -    Heroku
@@ -73,31 +71,15 @@ Base api url for the backend.
 The datascience api that hooks to the backend. This is where all 621 players stats are. 
 
 
-# 3️⃣ Environment Variables
-
-In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
-
-🚫These are just examples, replace them with the specifics for your app
-
-    *  REACT_APP_apiKey - this is your Google API key, which can be generated in the Google Cloud Console
-    *  REACT_APP_authDomain - when you set up your Firebase project, this information will be in the dashboard
-    *  REACT_APP_databaseURL - in the Firebase dashboard
-    *  REACT_APP_projectID - in the Firebase dashboard
-    *  REACT_APP_storageBucket - in the Firebase dashboard
-    *  REACT_APP_messagingSenderId - in the Firebase dashboard
-    *  REACT_APP_stripe_API - this is your public Stripe API key, generated in the Stripe dashboard
-    *  REACT_APP_backendURL - optional for your local development server
-    *  REACT_APP_clientid - this is the Stripe_connect clientID, generated in Stripe_connect settings
-    *  REACT_APP_stripe_plan - this is the ID for a second Stripe subscription plan, generated under Stripe products
-
 # 5️⃣ Content Licenses
 
 🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
 
-| Image Filename | Source / Creator | License                                                                      |
+| Image Filename | Source / Creator             | License                                                          |
 | -------------- | ---------------- | ---------------------------------------------------------------------------- |
-| doodles.png    | Nicole Bennett   | [Creative Commons](https://www.toptal.com/designers/subtlepatterns/doodles/) |
-| rings.svg      | Sam Herbert      | [MIT](https://github.com/SamHerbert/SVG-Loaders)                             |
+| Icomoon        | https://icomoon.io/#home     |                                                                  | 
+| Images         | https://unsplash.com/        |                                                                  |
+| Dashboard Pic  | SporLab                      | https://unsplash.com/photos/-cFN2l2Q-zY                          |
 
 # 4️⃣ Testing
 
@@ -109,12 +91,10 @@ NPM install
 
 ## Other Scripts
 
-🚫replace these examples with your own
-
-    * typecheck - runs the TypeScript compiler
-    * build - creates a build of the application
-    * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
+ "start": "react-scripts start",
+  "build": "react-scripts build",
+  "test": "react-scripts test",
+  "eject": "react-scripts eject"
 
 # Contributing
 
@@ -129,7 +109,7 @@ Please note we have a [code of conduct](./CODE_OF_CONDUCT.md). Please follow it 
  - Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
  - Create a live example of the problem.
  - Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes,  where you believe the issue is originating from, and any potential solutions you have considered.
-
+ 
 ### Feature Requests
 
 We would love to hear from you about new features which would improve this app and further the aims of our project. Please provide as much detail and information as possible to show us why you think your new feature should be implemented.
@@ -154,4 +134,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project.
+See [Backend Documentation](https://github.com/Lambda-School-Labs/nfl-fantasy-be_) for details on the backend of our project.
