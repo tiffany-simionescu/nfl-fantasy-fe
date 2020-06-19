@@ -37,13 +37,13 @@
 
             &:focus ~ label {
               left: 0;
-              color: #ffa630;
+              color: @mustard-yellow;
               font-size: 16px;
             }
 
             &:not(:placeholder-shown) ~ label {
               transform: translate(10%, -75%) scale(.9);
-              color: #ffa630;
+              color: @mustard-yellow;
             }
         }
 
@@ -62,10 +62,10 @@
     .login-button,
     .register-button {
       box-shadow: 0px 1px 0px 0px #fff6af;
-      background: linear-gradient(to bottom, #ffec64 5%, #ffa630 100%);
-      background-color:#ffec64;
+      background: linear-gradient(to bottom, @light-yellow 5%, @mustard-yellow 100%);
+      background-color:@light-yellow;
       border-radius: 6px;
-      border: 1px solid #ffa630;
+      border: 1px solid @mustard-yellow;
       display: inline-block;
       cursor: pointer;
       color:#333333;
@@ -73,11 +73,11 @@
       font-weight: bold;
       padding: 6px 24px;
       text-decoration: none;
-      text-shadow: 0px 1px 0px #ffee66;
+      text-shadow: 0px 1px 0px @light-yellow;
 
         &:hover {
-          background: linear-gradient(to bottom, #ffa630 5%, #ffec64 100%);
-          background-color:#ffa630;
+          background: linear-gradient(to bottom, @mustard-yellow 5%, @light-yellow 100%);
+          background-color:@mustard-yellow;
         }
 
         &:active {
@@ -101,7 +101,7 @@
       color: #03e9f4;
 
         &:hover {
-          color: rgb(250, 193, 140);
+          color: @light-orange;
         }
     }
 }
