@@ -1,6 +1,6 @@
 import React from "react";
 import AppRouter from './components/AppRouter.js';
-import './App.css';
+import './css/index.css';
 import ReactGA from 'react-ga';
 import { createBrowserHistory } from 'history';
 import Footer from "./components/Footer.js";
