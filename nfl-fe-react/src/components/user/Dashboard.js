@@ -1,17 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from 'axios'; 
 import DashboardCard from "./DashboardCard.js"; 
+import { connect } from "react-redux";
 
 const Dashboard = (props) => {
 
-    const [ fan, setFan] = useState({
-        fan_id: "",
-        first_name: "",
-        last_name: "",
-        city: "",
-        state: "",
-        email: ""
-    });  
+    const [ fan, setFan] = useState(props.fan);
 
     const all = `https://tacklemytrade-api.herokuapp.com/api/fans`;
 
@@ -19,8 +13,7 @@ const Dashboard = (props) => {
         axios 
         .get(all)
         .then(res => {
-            setFan(res.data.filter(fan => fan.username === localStorage.getItem('username')));
-            console.log(props.fan);
+            setFan(res.data.filter(fan => fan.username === props.fan.username));
             })
             .catch(err => {
             console.error(err);
@@ -43,4 +36,10 @@ const Dashboard = (props) => {
     )
 }
 
-export default Dashboard; 
+const mapStateToProps = state => {
+    return {
+        fan: state.fan
+    }
+}
+
+export default connect(mapStateToProps, {})(Dashboard)
