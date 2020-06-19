@@ -43,6 +43,7 @@ Tackle My Trade NFL Fantasy Football Trade Anaylzer is to help a fan to build th
  Front end built using:
 -   React
 -   Material-ui
+-   LESS CSS
 -   Styled-Components 
 -   Redux 
 -   Heroku 
