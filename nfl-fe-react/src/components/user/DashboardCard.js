@@ -13,12 +13,14 @@ const DashboardCard = (props) => {
                                 <h3>City:</h3>
                                 <h3>State:</h3>
                                 <h3>Email:</h3>
+                                <h3>Message:</h3>
                             </div>
                             <div className="dashboard-text-right">
                                 <h3>{props.fan.first_name} {props.fan.last_name}</h3>
                                 <h3>{props.fan.city}</h3>
                                 <h3>{props.fan.state}</h3>
                                 <h3>{props.fan.email}</h3>
+                                <h3>{props.fan.message}</h3>
                             </div>
                         </div>
                     </div>
