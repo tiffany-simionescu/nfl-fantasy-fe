@@ -34,16 +34,20 @@ export const registerFan = (fan, props) => dispatch => {
 };
 
 export const login = (fan, props) => dispatch => {
+  const cors ='https://cors-anywhere.herokuapp.com/';
+  const url = 'https://tacklemytrade-api.herokuapp.com/api/fans/login';
   dispatch({ type: LOGIN_START });
 
   axios
-    .post('https://tacklemytrade-api.herokuapp.com/api/fans/login', fan)
+    .post(cors + url, fan)
     .then(res => {
       dispatch({
         type: LOGIN_SUCCESS,
-        payload: res.data.fan
+        payload: res
       });
+      console.log(res.data);
       localStorage.setItem("fan-token", res.data.authToken);
+      localStorage.setItem("username", fan.username);
       props.history.push('/dashboard');
     })
     .catch(err => {

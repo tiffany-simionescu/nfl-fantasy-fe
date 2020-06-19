@@ -4,18 +4,23 @@ import DashboardCard from "./DashboardCard.js";
 
 const Dashboard = (props) => {
 
-    const [ users, setUsers] = useState([]); // getting all fans from database  
+    const [ fan, setFan] = useState({
+        fan_id: "",
+        first_name: "",
+        last_name: "",
+        city: "",
+        state: "",
+        email: ""
+    });  
 
-    const all = `https://tacklemytrade-api.herokuapp.com/api/fans`; // normal  
-    // fans/1 does work 
+    const all = `https://tacklemytrade-api.herokuapp.com/api/fans`;
 
     useEffect (() => {
         axios 
         .get(all)
         .then(res => {
-            setUsers(res.data);
-            res.data.map(users => console.log(users))
-            console.log(res);
+            setFan(res.data.filter(fan => fan.username === localStorage.getItem('username')));
+            console.log(props.fan);
             })
             .catch(err => {
             console.error(err);
@@ -24,19 +29,16 @@ const Dashboard = (props) => {
 
     return (
         <div className="Fan-Dashboard">
-            {users.length > 0  ? 
-                (users.map(users => 
-                // (users.filter(users => users.fan_id === `${userId.fan_id}` => 
+            {fan.length > 0  ? 
+                (fan.map(fan => 
                     { 
                 return(
-                    <DashboardCard key={users.fan_id} users={users} />
+                    <DashboardCard key={fan.fan_id} fan={fan} />
                 )
             })) : (
                 <h4> Is loading ...</h4>
             ) 
         }
-
-          {/* (users.filter(users => users.fan_id === ${userId.fan_id} =>  */}
         </div>
     )
 }
