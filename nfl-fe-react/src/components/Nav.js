@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from "styled-components"; 
 import tacklemytradelogo from "../styling/images/tacklemytradelogo.jpg"; 
 import { connect } from 'react-redux';
@@ -6,31 +6,36 @@ import { logout } from '../actions/fan-actions';
 
 
 function Nav (props) {
+
+  useEffect(() => {
+    
+  })
+
   return (
     <NavSection className="nav">
       <div className="Logo-Area"> 
         <img src={tacklemytradelogo} height="150px"  alt="tacklemytrade.com" /> 
         </div>
         <Anchors className="Link-Area" > 
-          <Testanchor href="/"> Home </Testanchor>
-          <Testanchor href="/about-us"> About Us</Testanchor>
-          <Testanchor href="/howtoguide" > How To Play </Testanchor>
-          <Testanchor href="/analytics"> Analytics </Testanchor>
+          <Testanchor className="link" href="/"> Home </Testanchor>
+          <Testanchor className="link" href="/about-us"> About Us</Testanchor>
+          <Testanchor className="link" href="/howtoguide" > How To Play </Testanchor>
+          <Testanchor className="link" href="/analytics"> Analytics </Testanchor>
         </Anchors> 
-        <Anchors>
+        <Anchors className="Right-Link-Area">
 
-          {props.isLoggedIn ? (
-            <Testanchor href="/dashboard"> Dashboard </Testanchor>
+          {props.isLoggedIn || localStorage.getItem('fan-token') ? (
+            <Testanchor className="link" href="/dashboard"> Dashboard </Testanchor>
           ) : (
             null
           )}
 
-          <Testanchor href="/register"> Register </Testanchor>
+          <Testanchor className="link" href="/register"> Register </Testanchor>
 
-          {props.isLoggedIn ? (
-            <Testanchor href="/" onClick={props.logout}> Logout </Testanchor>
+          {props.isLoggedIn || localStorage.getItem('fan-token') ? (
+            <Testanchor className="link" href="/" onClick={props.logout}> Logout </Testanchor>
           ) : (
-            <Testanchor href="/login"> Login </Testanchor>
+            <Testanchor className="link" href="/login"> Login </Testanchor>
           )}
         </Anchors>
     </NavSection> 
