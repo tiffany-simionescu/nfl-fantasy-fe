@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 
 
-export default function LargeDivder() {
+export default function LargeDivider() {
     return (
         <div className="Styled Divider">
             <Div className="styling"></Div>

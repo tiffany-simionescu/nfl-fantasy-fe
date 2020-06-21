@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import github from "../styling/icomoon/PNG/github.png";
 import linkedin from "../styling/icomoon/PNG/linkedin.png"; 
-import LargeDivder from "../styling/LargeDivider.js";  
+import LargeDivider from "../styling/LargeDivider.js";  
 import JimPicture from "../styling/images/JimPicture.jpg"; 
 import ThatcherPicture from "../styling/images/ThatcherPicture.png";
 import TiffanyPicture from "../styling/images/TiffanyPicture.jpeg"; 
@@ -15,13 +15,12 @@ const AboutPage = () => {
     return (
         <div className="AboutPage">
             <Heading className="Title">
-            <h1> About Us </h1> 
-            <LargeDivder />
+            <h1> About Us  <LargeDivider /></h1> 
                 </Heading>
             <MainArea className="Card-Area">
                 <TeamMembers className="team-members">
                     <div className="Data-Science">
-                        <Titles> Data Science  <LargeDivder /> </Titles> 
+                        <Titles> Data Science  <LargeDivider /> </Titles> 
                     <Box className="Enkihzorig-Batsaikhan">
                         <img src={ZorigPicture} alt="Enkhzorig Batsaikhan" height="254px" width="200px" />
                         <h3> Enkhzorig Batsaikhan </h3>
@@ -40,7 +39,7 @@ const AboutPage = () => {
                     </Box>
                     </div>
                 <div className="Web-Development">
-                    <Titles> Web Development  <LargeDivder /> </Titles>
+                    <Titles> Web Development  <LargeDivider /> </Titles>
                     <Box className="Thatcher-Phan">
                         <img src={ThatcherPicture} alt="Thatcher Phan" height="254px" width="250px"/>
                         <h3> Thatcher Phan </h3>
@@ -97,6 +96,7 @@ font-size: 2rem;
 
 const Heading = styled.div`
 background: #ffa630;
+font-size: 3.5rem;
 `
 
 const TeamMembers = styled.div`
