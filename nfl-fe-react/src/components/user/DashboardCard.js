@@ -1,4 +1,5 @@
 import React from "react";
+import "../../styling/index.less";
 
 const DashboardCard = (props) => {
     return (

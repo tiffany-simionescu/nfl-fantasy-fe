@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,9 +35,10 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
-.playerB-dropdown {
+/* Style for the Autocomplete */
+/* .playerB-dropdown {
   display: flex;
   flex-direction: column;
 }
@@ -47,8 +48,6 @@
   flex-direction: column;
 }
 
-
-/* Style for the Autocomplete */
 .search {
   width: 30rem;
   margin: 10rem auto 2rem auto;
@@ -125,11 +124,11 @@ ul.options li.option-active {
 }
 .no-options {
   color: white;
-}
+} */
 
 /* Login Form */
 /* Register Form */
-.login-box,
+/* .login-box,
 .register-box {
   width: 500px;
   margin: auto;
@@ -239,10 +238,10 @@ ul.options li.option-active {
 .no-account-link:hover,
 .have-account-link:hover {
   color: rgb(250, 193, 140);
-}
+} */
 
 /* Dashboard Card */
-.dashboard-card {
+/* .dashboard-card {
   background: linear-gradient(#ffa630, #ffec64);
   width: 400px;
   margin: 30px auto;
@@ -268,4 +267,4 @@ ul.options li.option-active {
 .dashboard-card img {
   width: 200px;
   border-radius: 50%;
-}
+} */

@@ -12,7 +12,8 @@ const LoginForm = props => {
   const handleChange = e => {
     setFan({
       ...fan,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      [props.fan]: fan
     });
   };
 
@@ -59,7 +60,8 @@ const LoginForm = props => {
 
 const mapStatetoProps = state => {
   return {
-    loggedIn: state.isLoggedIn
+    loggedIn: state.isLoggedIn,
+    fan: state.fan
   };
 }
 

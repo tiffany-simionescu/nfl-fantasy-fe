@@ -43,11 +43,10 @@ export const login = (fan, props) => dispatch => {
     .then(res => {
       dispatch({
         type: LOGIN_SUCCESS,
-        payload: res
+        payload: res.data
       });
       console.log(res.data);
       localStorage.setItem("fan-token", res.data.authToken);
-      localStorage.setItem("username", fan.username);
       props.history.push('/dashboard');
     })
     .catch(err => {
