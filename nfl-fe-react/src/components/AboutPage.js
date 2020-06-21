@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import github from "../styling/icomoon/PNG/github.png";
 import linkedin from "../styling/icomoon/PNG/linkedin.png"; 
-import LargeDivder from "../styling/LargeDivder.js";  
+import LargeDivder from "../styling/LargeDivider.js";  
 import JimPicture from "../styling/images/JimPicture.jpg"; 
 import ThatcherPicture from "../styling/images/ThatcherPicture.png";
 import TiffanyPicture from "../styling/images/TiffanyPicture.jpeg"; 
