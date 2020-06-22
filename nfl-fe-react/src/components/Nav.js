@@ -10,10 +10,16 @@ function Nav () {
         <img src={tacklemytradelogo} height="150px"  alt="tacklemytrade.com" /> 
         </div>
         <Anchors className="Link-Area" > 
-          <Testanchor href="http://tacklemytrade.com/"> Home </Testanchor>
-          <Testanchor href="#"> About Us</Testanchor>
-          <Testanchor href="#" > How To Play </Testanchor>
+          <Testanchor href="/"> Home </Testanchor>
+          <Testanchor href="/about-us"> About Us</Testanchor>
+          <Testanchor href="/howtoguide" > How To Play </Testanchor>
+          <Testanchor href="/analytics"> Analytics </Testanchor>
         </Anchors> 
+        <Anchors>
+          <Testanchor href="/register"> Register </Testanchor>
+          <Testanchor href="/login"> Login </Testanchor>
+          {/* <Testanchor href='/api/fan/:id'> Dashboard </Testanchor> */}
+        </Anchors>
     </NavSection> 
   )
 }
