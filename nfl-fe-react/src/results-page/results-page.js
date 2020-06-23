@@ -55,8 +55,10 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
         playersname={result.name}
         position={result.position}
         rankPrediction={result.rankPred}
-        week_1={result.weekPred}
+        weekActual={result.weekAct}
+        weekPredict={result.weekPred}
         isWinner={result.winner}
+        weekNum={week}
       />
     </div>
     )
