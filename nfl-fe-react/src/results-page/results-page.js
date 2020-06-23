@@ -6,6 +6,12 @@ import { Form } from 'semantic-ui-react';
 import ResultsCard from './results-card.js';
 import styled from "styled-components"; 
 
+// import TextField from '@material-ui/core/TextField';
+// import Autocomplete from '@material-ui/lab/Autocomplete';
+// import PlayerList from '../components/PlayerList';
+import AutoCompleteBox2 from '../components/Autocomplete2';
+
+
 const initial_state = {
   player0_name: "",
   player1_name: "",
@@ -25,7 +31,19 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
       console.log(searchResults)
     };
 
+    // const handleSubmit = e => {
+    //   e.preventDefault();
+    //   axios.get(`https://nfl-perfect-trader.herokuapp.com/api/trade/?player0_id=${player0_name}&player1_id=${player1_name}&week=${week}`)
+    //     .then(res => {
+    //       console.log(res);
+    //     })
+    //     .catch(err => {
+    //       console.error(err);
+    //     })
+    // }
+
   const handleChange = event => {
+    event.preventDefault();
     setState({
       ...state, 
       [event.target.name]: event.target.value
@@ -55,7 +73,8 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
         playersname={result.name}
         position={result.position}
         rankPrediction={result.rankPred}
-        week_1={result.weekPred}
+        weekActual={result.weekAct}
+        weekPredict={result.weekPred}
         isWinner={result.winner}
       />
     </div>
@@ -67,26 +86,43 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
       <div>
         <Form onSubmit={handleSubmit}>
           <H3> Team 1 </H3>
-          <Form.Input 
+          {/* <Form.Input 
             type="text"
             name="player0_name"
             value={player0_name}
             onChange={handleChange}
             placeholder="1st player"
+          /> */}
+          <AutoCompleteBox2 
+            name="Player 1"
+            value={player0_name}
+            inputValue={player0_name}
+            onChange={handleChange}
+            label="Player 1" 
           />
           <H3> Team 2 </H3>
-          <Form.Input 
+          {/* <Form.Input 
             type="text"
             name="player1_name"
             value={player1_name}
             onChange={handleChange}
             placeholder="2nd player"
+          /> */}
+         <AutoCompleteBox2 
+            name="Player 2"
+            value={player1_name}
+            inputValue={player1_name}
+            onChange={handleChange}
+            label="Player 2" 
           />
+          {/* <DropDownForms
+            value={player0_name, player1_name}
+          /> */}
           <H3> Week </H3>
           <Form.Input 
             type="number"
             name="week"
-            value={week}
+            inputValue={week}
             onChange={handleChange}
             placeholder="week number"
           />
@@ -112,6 +148,3 @@ padding: 2rem;
 
 
 export default SearchPlayersStatForm;
-
-
-
