@@ -2,9 +2,9 @@ import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import React from "react";
 import { useForm } from "react-hook-form";
-import {PlayerList} from "./PlayerList";
+import PlayerList from "./PlayerList";
 
-function DropDownForms(props) {
+function DropDownForms() {
   const { register, handleSubmit, setValue } = useForm();
   //################################ This is for multiple Players ###################################
 
@@ -41,13 +41,12 @@ function DropDownForms(props) {
         <Autocomplete
           id="combo-box-demo"
           options={PlayerList}
-          getOptionLabel={(option) => option.playerFull}
+          getOptionLabel={(option: PlayerNames) => option.playerFull}
           style={{ width: 300 }}
           renderInput={(params) => (
             <TextField
               {...params}
-              name="single1"
-              value={props.player0_name}
+              name="single"
               label="Enter Players Name"
               variant="outlined"
               fullWidth
@@ -59,13 +58,12 @@ function DropDownForms(props) {
         <Autocomplete
           id="combo-box-demo"
           options={PlayerList}
-          getOptionLabel={(option) => option.playerFull}
+          getOptionLabel={(option: PlayerNames) => option.playerFull}
           style={{ width: 300 }}
           renderInput={(params) => (
             <TextField
               {...params}
-              name="single2"
-              value={props.player1_name}
+              name="single"
               label="Enter Players Name"
               variant="outlined"
               fullWidth
@@ -81,10 +79,10 @@ function DropDownForms(props) {
   );
 }
 
-// interface PlayerNames {
-//   playerFull: string;
-//   playerID: string;
-// }
+interface PlayerNames {
+  playerFull: string;
+  playerID: string;
+}
 export default DropDownForms;
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
