@@ -22,6 +22,6 @@ export default function AppRouter() {
             <Route path="/register" component={RegisterForm} />
             <Route path="/login" component={LoginForm} />
             <PrivateRoute path="/dashboard" component={Dashboard} />
-        </Router>
+        </Router> 
     )
 }

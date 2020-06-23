@@ -7,7 +7,7 @@ const Dashboard = (props) => {
 
     const [ fan, setFan] = useState(props.fan);
 
-    const all = `https://tacklemytrade-api.herokuapp.com/api/fans`;
+    const all = `https://tacklemytrade-api.herokuapp.com/api/fans`; 
 
     useEffect (() => {
         axios 

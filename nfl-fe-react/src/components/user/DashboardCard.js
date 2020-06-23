@@ -5,7 +5,7 @@ const DashboardCard = (props) => {
     return (
     <div>
         <h3> Fan's dashboard</h3>
-            {localStorage.getItem('fan-token') ? (
+            {localStorage.getItem('fan-token') ? ( 
                     <div className="dashboard-card">
                         <img src="https://images.unsplash.com/flagged/photo-1568407431368-5ea1a07a4d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="profile" />
                         <div className="dashboard-card-text">

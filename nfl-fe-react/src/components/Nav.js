@@ -22,7 +22,7 @@ function Nav () {
         </Anchors>
     </NavSection> 
   )
-}
+} 
 
 export default Nav;
 

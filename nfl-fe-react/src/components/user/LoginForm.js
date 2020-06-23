@@ -9,7 +9,7 @@ const LoginForm = props => {
     password: ""
   });
 
-  const handleChange = e => {
+  const handleChange = e => { 
     setFan({
       ...fan,
       [e.target.name]: e.target.value,

@@ -10,7 +10,7 @@ const initialState = {
     city: "",
     state: ""
   },
-  isFetching: false,
+  isFetching: false, 
   error: "",
   isSubmitting: false,
   isLoggedIn: false

@@ -13,7 +13,7 @@ const Footer = () => {
         </div>
         </Border>
     </Div>
-    );
+    ); 
 };
 
 export default Footer; 

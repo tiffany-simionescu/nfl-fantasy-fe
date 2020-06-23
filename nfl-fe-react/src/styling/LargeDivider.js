@@ -9,7 +9,7 @@ export default function LargeDivider() {
             <Div className="styling"></Div>
         </div>
     )
-}
+} 
 
 
 const Div = styled.div`

@@ -5,7 +5,7 @@ import {
   ADD_FAN_FAILURE,
   LOGIN_SUCCESS,
   LOGOUT
-} from '../actions/fan-actions';
+} from '../actions/fan-actions'; 
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
