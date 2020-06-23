@@ -4,22 +4,20 @@ import { connect } from 'react-redux';
 import { login } from '../../actions/fan-actions';
 
 const LoginForm = props => {
-  const [fan, setFan] = useState({
-    username: "",
-    password: ""
-  });
+  const [fan, setFan] = useState(props.fan);
 
   const handleChange = e => {
     setFan({
       ...fan,
       [e.target.name]: e.target.value,
-      [props.fan]: fan
+      // [props.fan]: fan
     });
   };
 
   const handleSubmit = e => {
     e.preventDefault();
     props.login(fan, props);
+    
   };
 
   return (
