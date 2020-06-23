@@ -49,13 +49,6 @@ const mapStateToProps = state => {
   }
 }
 
-// export default Nav;
-const mapStateToProps = state => {
-  return {
-    isLoggedIn: state.isLoggedIn
-  }
-}
-
 export default connect(mapStateToProps, { logout })(Nav);
 
 const NavSection = styled.div`
