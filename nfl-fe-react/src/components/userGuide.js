@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 function userGuide() {
     return (
-        <GuideDiv className="UserGuide">
+        <GuideDiv className="UserGuide"> 
             <h2> Guide: How To Use the Trade Analyzer</h2>
                 <h4>
                 Let's do an analyzed trade with a member on your fantasy team with another person's team. We will compare the scores and know if you should trade or not trade. 

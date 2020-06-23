@@ -1,54 +1,44 @@
 import React from 'react';
-import styled from "styled-components";
 
-import twitter from "../styling/icomoon/PNG/twitter.png"; 
-import facebook2 from "../styling/icomoon/PNG/facebook2.png";
-import instagram from "../styling/icomoon/PNG/instagram.png";
-import share from "../styling/icomoon/PNG/share.png";
+import styled from "styled-components"; 
 
-function Footer () {
-  return (
-    <FooterSection className="footer">
-      <div className="Social-Media">
-        <h3> Keep updated on players, content adds or share with your friends </h3> <Icons src={share} alt="share icon" />
-        <Icons src={facebook2} alt="facebook logo" />
-        <Icons src={twitter} alt="twitter logo" />
-        <Icons src={instagram} alt="instagram logo" />
+const Footer = () => {
+    return (
+    <Div className="Footer">
+        <Border className="styling">
+        <div className="Link-Area">
+            <CopyRightDiv className="Copyright-Info">
+            <h5>Copyright © 2020. All Rights Reserved, built by Students at <A href="https://lambdaschool.com/">Lambda School </A> </h5>
+            </CopyRightDiv>
+        </div>
+        </Border> 
+    </Div>
+    ); 
+};
 
-      </div>
-      <div className="links">
-        <Testanchor href="http://www.tacklemytrade.com/">
-          Home
-        </Testanchor>
-        <Testanchor href="#">
-          How To Play
-        </Testanchor>
-      <div className="copyright">
-          <h5>Copyright © 2020 Tackle My Trade. All Rights Reserved</h5>
-      </div>
-      </div>
-    </FooterSection>
-  )
-}
+export default Footer; 
 
-const FooterSection = styled.div` 
-width: 100%;
-background: #007090;
-padding: 2rem; 
+const Div = styled.div`
+width: 65%;
+margin: auto;
+padding: 2rem;
+justify-content: center;
 `
 
-const Icons = styled.img `
-padding: 1rem; 
+const Border = styled.div`
+border-top: 1.25px solid #001021; 
 `
 
-const Testanchor = styled.a`
-color:#eeeeff;
-padding: 3rem;
-font-size: 1.25rem; 
-cursor: pointer;  
+const CopyRightDiv = styled.div`
+color: 	#696969;
+text-align: center; 
+`
+
+const A = styled.a`
+text-decoration: none;
+color: 	#696969; 
+cursor: pointer; 
 &:hover {
-  color: #ffa630;
-  }
+    color: #001021;
+    }
 `
-
-export default Footer;
