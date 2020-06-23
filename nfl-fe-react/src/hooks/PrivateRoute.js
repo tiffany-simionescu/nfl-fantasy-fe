@@ -5,7 +5,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
     return (
         <Route 
         {...rest}
-        render={() => {
+        render={() => { 
             if (localStorage.getItem("fan-token")) {
                 return <Component />;
             } else {

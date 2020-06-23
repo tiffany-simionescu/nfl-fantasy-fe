@@ -3,7 +3,7 @@ import axios from 'axios';
 import DashboardCard from "./DashboardCard.js"; 
 import { connect } from "react-redux";
 
-const Dashboard = (props) => {
+const Dashboard = (props) => { 
 
     const [ fan, setFan] = useState(props.fan);
 

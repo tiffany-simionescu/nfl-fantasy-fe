@@ -8,7 +8,7 @@ const initialState = {
     last_name: "",
     email: "",
     city: "",
-    state: ""
+    state: "" 
   },
   isFetching: false, 
   error: "",

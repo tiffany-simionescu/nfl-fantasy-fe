@@ -10,7 +10,7 @@ const AnalyticsPage = () => {
             <Heading className="Title">
             <h1>Methodology</h1> <LargeDivider />
             </Heading>
-            <Div className="Intro">
+            <Div className="Intro"> 
             <Titles>Introduction 
                 <Divider className="styling" />
                 </Titles> 

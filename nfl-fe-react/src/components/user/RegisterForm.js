@@ -14,7 +14,7 @@ const RegisterForm = props => {
         state: ""
     });
 
-    const handleChange = e => {
+    const handleChange = e => { 
         setFan({
             ...fan,
             [e.target.name]: e.target.value

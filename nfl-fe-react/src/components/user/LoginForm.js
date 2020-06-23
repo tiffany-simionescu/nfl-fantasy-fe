@@ -8,7 +8,7 @@ const LoginForm = props => {
 
   const handleChange = e => { 
     setFan({
-      ...fan,
+      ...fan, 
       [e.target.name]: e.target.value,
       // [props.fan]: fan
     });

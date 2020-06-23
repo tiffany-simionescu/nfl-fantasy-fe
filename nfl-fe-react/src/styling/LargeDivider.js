@@ -14,5 +14,5 @@ export default function LargeDivider() {
 
 const Div = styled.div`
 border-bottom: 2.5px solid black;
-viewpoint-width: 100%; 
+viewpoint-width: 100%;  
 `

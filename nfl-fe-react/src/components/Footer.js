@@ -11,7 +11,7 @@ const Footer = () => {
             <h5>Copyright © 2020. All Rights Reserved, built by Students at <A href="https://lambdaschool.com/">Lambda School </A> </h5>
             </CopyRightDiv>
         </div>
-        </Border>
+        </Border> 
     </Div>
     ); 
 };

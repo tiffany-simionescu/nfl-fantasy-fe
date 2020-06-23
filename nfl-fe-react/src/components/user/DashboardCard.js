@@ -3,7 +3,7 @@ import "../../styling/index.less";
 
 const DashboardCard = (props) => {
     return (
-    <div>
+    <div> 
         <h3> Fan's dashboard</h3>
             {localStorage.getItem('fan-token') ? ( 
                     <div className="dashboard-card">

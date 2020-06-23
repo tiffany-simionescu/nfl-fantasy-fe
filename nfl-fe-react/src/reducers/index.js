@@ -1,7 +1,7 @@
 import initialState from './initialState';
 import {
   POST_INITIALIZE, 
-  ADD_FAN_SUCCESS,
+  ADD_FAN_SUCCESS, 
   ADD_FAN_FAILURE,
   LOGIN_SUCCESS,
   LOGOUT

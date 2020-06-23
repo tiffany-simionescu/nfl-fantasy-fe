@@ -61,4 +61,4 @@ export const login = (fan, props) => dispatch => {
 export const logout = () => dispatch => {
   dispatch({ type: LOGOUT });
   localStorage.clear();
-} 
+}

@@ -11,7 +11,7 @@ import LauraPicture from "../styling/images/LauraPicture.png";
 import MockPicture from "../styling/images/MockPicture.png"; 
 import ZorigPicture from "../styling/images/ZorigPicture.jpg"; 
 
-const AboutPage = () => {
+const AboutPage = () => { 
     return (
         <div className="AboutPage">
             <Heading className="Title">

@@ -47,7 +47,7 @@ const mapStateToProps = state => {
   return {
     isLoggedIn: state.isLoggedIn
   }
-}
+} 
 
 export default connect(mapStateToProps, { logout })(Nav);
 
