@@ -1,10 +1,6 @@
 import React from 'react';
-import styled from "styled-components";
 
-import twitter from "../styling/icomoon/PNG/twitter.png"; 
-import facebook2 from "../styling/icomoon/PNG/facebook2.png";
-import instagram from "../styling/icomoon/PNG/instagram.png";
-import share from "../styling/icomoon/PNG/share.png";
+import styled from "styled-components"; 
 
 const Footer = () => {
     return (
@@ -20,24 +16,29 @@ const Footer = () => {
     ); 
 };
 
-const FooterSection = styled.div` 
-width: 100%;
-background: #007090;
-padding: 2rem; 
+export default Footer; 
+
+const Div = styled.div`
+width: 65%;
+margin: auto;
+padding: 2rem;
+justify-content: center;
 `
 
-const Icons = styled.img `
-padding: 1rem; 
+const Border = styled.div`
+border-top: 1.25px solid #001021; 
 `
 
-const Testanchor = styled.a`
-color:#eeeeff;
-padding: 3rem;
-font-size: 1.25rem; 
-cursor: pointer;  
+const CopyRightDiv = styled.div`
+color: 	#696969;
+text-align: center; 
+`
+
+const A = styled.a`
+text-decoration: none;
+color: 	#696969; 
+cursor: pointer; 
 &:hover {
-  color: #ffa630;
-  }
+    color: #001021;
+    }
 `
-
-export default Footer;
