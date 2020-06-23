@@ -166,6 +166,20 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.Link-Area .link,
+.Right-Link-Area .link {
+  padding: 10px 30px;
+  padding-bottom: 14px;
+  margin: 5px;
+}
+.Link-Area .link:hover,
+.Right-Link-Area .link:hover {
+  border-radius: 10px;
+  box-shadow: -3px 0px 0px 0px inset, 3px 0px 0px 0px inset;
+  box-sizing: border-box;
+  transition: all 0.4s ease;
+}
 .playerB-dropdown {
   display: flex;
   flex-direction: column;
@@ -301,8 +315,8 @@ ul.options li.option-active {
 .login-box .fan-box input,
 .register-box .fan-box input {
   width: 100%;
-  padding: 10px 0;
-  font-size: 16px;
+  padding: 9px 0;
+  font-size: 15px;
   color: #fff;
   margin-bottom: 30px;
   border: none;
@@ -326,7 +340,7 @@ ul.options li.option-active {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 8px 0;
+  padding: 9px 0;
   font-size: 16px;
   color: #fff;
   pointer-events: none;
