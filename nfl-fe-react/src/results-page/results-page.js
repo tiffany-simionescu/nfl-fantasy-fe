@@ -37,8 +37,8 @@ const SearchPlayersStatForm = ({ onFormSubmit = () => {} }) => {
     setState({
       ...state, 
       [event.target.name]: event.target.value, 
-      player0_name: values.playerFull,
-      player1_name: values.playerFull
+      [player0_name.name]: values.playerFull,
+      [player1_name.name]: values.playerFull
     });
     console.log(event.target.value);
     console.log(values.playerFull);

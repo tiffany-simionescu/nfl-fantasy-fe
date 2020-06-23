@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import TextField from '@material-ui/core/TextField';
+import Input from '@material-ui/core/Input';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import {PlayerList} from './PlayerList';
 
@@ -21,7 +22,8 @@ function AutoCompleteBox2(props) {
         onChange={props.onChange}
         inputValue={props.inputValue}
         label={props.label} 
-        variant="outlined" />}
+        variant="outlined" 
+        />}
     />
   )
 }
